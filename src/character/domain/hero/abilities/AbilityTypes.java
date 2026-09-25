@@ -1,4 +1,4 @@
-package character.domain.hero.characteristics;
+package character.domain.hero.abilities;
 
 public enum AbilityTypes {
     STRENGTH,
