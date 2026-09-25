@@ -1,10 +1,11 @@
 package character.domain.hero.health;
 
-public class Health {
+public class HealthPoints {
+
     private int currentHP;
     private int maximumHP;
 
-    public Health(int currentHP, int maximumHP) {
+    public HealthPoints(int currentHP, int maximumHP) {
         this.maximumHP = maximumHP;
         this.currentHP = maximumHP;
     }
