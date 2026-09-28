@@ -1,4 +1,4 @@
-package domain.player;
+package character.domain;
 
 import java.util.ArrayList;
 import java.util.UUID;
