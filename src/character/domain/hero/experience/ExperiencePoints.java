@@ -5,8 +5,8 @@ public class ExperiencePoints {
     private int currentXP;
     private int maximumXP;
 
-    public ExperiencePoints(int maximumXP) {
-        currentXP = 0;
+    public ExperiencePoints(int currentXP, int maximumXP) {
+        this.currentXP = currentXP;
         this.maximumXP = maximumXP;
     }
 
