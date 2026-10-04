@@ -5,7 +5,7 @@ public class HealthPoints {
     private int currentHP;
     private int maximumHP;
 
-    public HealthPoints(int currentHP, int maximumHP) {
+    public HealthPoints(int maximumHP) {
         this.maximumHP = maximumHP;
         this.currentHP = maximumHP;
     }

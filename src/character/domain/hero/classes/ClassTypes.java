@@ -12,4 +12,8 @@ public enum ClassTypes {
     ClassTypes(int baseHP) {
         this.baseHP = baseHP;
     }
+
+    public int getBaseHP() {
+        return baseHP;
+    }
 }
