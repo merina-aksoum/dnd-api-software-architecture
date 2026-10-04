@@ -18,6 +18,7 @@ public class Hero {
         private MagicPoints mp;
 
         private Name name;
+
         private Ability strength;
         private Ability dexterity;
         private Ability constitution;
