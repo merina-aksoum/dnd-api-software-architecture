@@ -1,5 +1,6 @@
 package character.api;
 
+import character.application.CreateHeroUseCase;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.ws.rs.HeaderParam;
@@ -15,7 +16,7 @@ public class HeroResource {
     private CreateHeroUseCase createHeroUseCase;
     private CreateHeroRequestMapper requestMapper;
 
-    public HeroResource(CreateHeroUseCase createHeroUseCase, CreateHeroHRequestMapper requestMapper) {
+    public HeroResource(CreateHeroUseCase createHeroUseCase, CreateHeroRequestMapper requestMapper) {
         this.createHeroUseCase = createHeroUseCase;
         this.requestMapper = requestMapper;
     }
