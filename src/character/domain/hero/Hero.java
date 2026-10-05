@@ -10,7 +10,11 @@ import character.domain.hero.Name;
 import character.domain.hero.abilities.Ability;
 import character.domain.hero.races.RaceTypes;
 
+import java.util.UUID;
+
 public class Hero {
+
+        private UUID id;
 
         private Level level;
         private ExperiencePoints xp;
@@ -29,7 +33,7 @@ public class Hero {
         private RaceTypes race;
         private ClassTypes heroClass;
 
-        public Hero(Level level,
+        public Hero(UUID id, Level level,
                     ExperiencePoints xp,
                     HealthPoints hp,
                     MagicPoints mp,
@@ -42,6 +46,7 @@ public class Hero {
                     Ability charisma,
                     RaceTypes race,
                     ClassTypes heroClass) {
+            this.id = id;
             this.xp = xp;
             this.hp = hp;
             this.mp = mp;

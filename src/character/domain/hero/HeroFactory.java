@@ -12,11 +12,13 @@ import character.domain.hero.magic.MagicPoints;
 import character.domain.hero.races.RaceTypes;
 
 import java.util.Map;
+import java.util.UUID;
 
 public class HeroFactory {
 
         public Hero create(String nameString, Map<AbilityTypes, Integer> abilitiesData, RaceTypes race, ClassTypes heroClass) {
 
+                UUID id = UUID.randomUUID();
                 Level level = new Level(1);
                 ExperiencePoints xp = new ExperiencePoints(0,300);
                 HealthPoints hp = new HealthPoints(heroClass.getBaseHP());
@@ -40,7 +42,7 @@ public class HeroFactory {
                 Ability wisdom = abilities.get(AbilityTypes.WISDOM);
                 Ability charisma = abilities.get(AbilityTypes.CHARISMA);
 
-                Hero hero = new Hero(level, xp, hp, mp, name, strength, dexterity, constitution, intelligence, wisdom, charisma, race, heroClass);
+                Hero hero = new Hero(id, level, xp, hp, mp, name, strength, dexterity, constitution, intelligence, wisdom, charisma, race, heroClass);
 
                 return hero;
         }
