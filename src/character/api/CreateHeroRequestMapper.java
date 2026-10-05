@@ -1,5 +1,7 @@
 package character.api;
 
+import character.application.CreateHeroCommand;
+
 public class CreateHeroRequestMapper {
 
     public CreateHeroCommand toCommand(String playerId, CreateHeroRequest request) {
