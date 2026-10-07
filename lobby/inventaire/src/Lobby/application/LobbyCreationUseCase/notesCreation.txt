@@ -1,0 +1,4 @@
+Pour creer un lobby, nous avons besoin de savoir quoi?
+1. Son ID
+2. Le nombre de joueurs qui peuvent joindre
+3. Un start/stop button

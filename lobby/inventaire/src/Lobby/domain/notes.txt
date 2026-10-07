@@ -1,0 +1,6 @@
+Au moment de l'utilisation de lobby, nous devons savoir :
+1. Son status (Is it done or not?)
+2. Qui sont les joueurs qui jouent dans ce lobby?
+3. Ceux qui rentrent et sortent
+4. Selection des heros
+3. Ses proprietes
