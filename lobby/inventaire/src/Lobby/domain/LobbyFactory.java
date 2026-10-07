@@ -8,7 +8,8 @@ public class LobbyFactory {
             int lobbyCapacity) {
 
         return new Lobby(
-                LobbyId.generate()
+                LobbyId.generate(),
+                new LobbyCapacity()
         );
     }
 }
