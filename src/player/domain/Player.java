@@ -5,13 +5,13 @@ import character.domain.hero.*;
 
 public class Player {
     private Username username;
-    private String password; // TODO: Find a way to make actually secured passwords
+    private Password password; // TODO: Find a way to make actually secured passwords
     private PlayerId id;
     private ArrayList<Hero> heroes;
 
     public Player(
             Username username,
-            String password) {
+            Password password) {
         this.username = username;
         this.password = password;
         this.id = PlayerId.generate();
@@ -33,7 +33,7 @@ public class Player {
     }
 
     public String getPassword() {
-        return password;
+        return password.value();
     }
 
     public String getId() {
