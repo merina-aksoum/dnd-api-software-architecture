@@ -1,4 +1,4 @@
-package player.domain;
+package main.player.domain;
 
 import java.util.UUID;
 import java.util.Objects;

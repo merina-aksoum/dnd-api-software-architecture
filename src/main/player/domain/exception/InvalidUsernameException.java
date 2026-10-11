@@ -1,4 +1,4 @@
-package player.domain.exception;
+package main.player.domain.exception;
 
 public class InvalidUsernameException extends PlayerException {
     public InvalidUsernameException() {
