@@ -1,17 +1,17 @@
-package character.domain;
+package player.domain;
 
 import java.util.ArrayList;
 import java.util.UUID;
 import character.domain.hero.*;
 
 public class Player {
-    private String username; // TODO: Get client's requirements for usernames requirement
+    private Username username;
     private String password; // TODO: Find a way to make actually secured passwords
     private UUID id;
     private ArrayList<Hero> heroes;
 
     public Player(
-            String username,
+            Username username,
             String password) {
         this.username = username;
         this.password = password;
@@ -30,7 +30,7 @@ public class Player {
     }
 
     public String getUsername() {
-        return username;
+        return username.value();
     }
 
     public String getPassword() {
