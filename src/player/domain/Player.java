@@ -1,13 +1,12 @@
 package player.domain;
 
 import java.util.ArrayList;
-import java.util.UUID;
 import character.domain.hero.*;
 
 public class Player {
     private Username username;
     private String password; // TODO: Find a way to make actually secured passwords
-    private UUID id;
+    private PlayerId id;
     private ArrayList<Hero> heroes;
 
     public Player(
@@ -15,7 +14,7 @@ public class Player {
             String password) {
         this.username = username;
         this.password = password;
-        this.id = UUID.randomUUID();
+        this.id = PlayerId.generate();
         this.heroes = new ArrayList<>();
     }
 
@@ -37,8 +36,8 @@ public class Player {
         return password;
     }
 
-    public UUID getId() {
-        return id;
+    public String getId() {
+        return id.value();
     }
 
     public ArrayList<Hero> getHeroes() {
