@@ -1,7 +1,6 @@
 package character.application;
 
 public record HeroOutput(
-        String playerId,
         String id,
         int level,
         int xp,
