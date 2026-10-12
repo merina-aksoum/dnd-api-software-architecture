@@ -1,22 +1,22 @@
 package character.domain.hero;
 
-import character.domain.hero.Name;
+
+import character.domain.hero.abilities.Abilities;
 import character.domain.hero.abilities.Ability;
 import character.domain.hero.abilities.AbilityBuilder;
-import character.domain.hero.abilities.AbilityTypes;
 import character.domain.hero.classes.ClassTypes;
 import character.domain.hero.experience.ExperiencePoints;
 import character.domain.hero.health.HealthPoints;
 import character.domain.hero.level.Level;
 import character.domain.hero.magic.MagicPoints;
 import character.domain.hero.races.RaceTypes;
+import character.domain.hero.Name;
 
-import java.util.Map;
 import java.util.UUID;
 
 public class HeroFactory {
 
-        public Hero create(String nameString, Map<AbilityTypes, Integer> abilitiesData, RaceTypes race, ClassTypes heroClass) {
+        public Hero create(String nameString, int strengthValue, int dexterityValue, int constitutionValue, int intelligenceValue, int wisdomValue, int charismaValue, RaceTypes race, ClassTypes heroClass) {
 
                 UUID id = UUID.randomUUID();
                 Level level = new Level(1);
@@ -33,14 +33,15 @@ public class HeroFactory {
 
                 Name name = new Name(nameString);
 
-                AbilityBuilder abilityBuilder = new AbilityBuilder(abilitiesData, race);
-                Map<AbilityTypes, Ability> abilities = abilityBuilder.setUpAbilities();
-                Ability strength = abilities.get(AbilityTypes.STRENGTH);
-                Ability dexterity = abilities.get(AbilityTypes.DEXTERITY);
-                Ability constitution = abilities.get(AbilityTypes.CONSTITUTION);
-                Ability intelligence = abilities.get(AbilityTypes.INTELLIGENCE);
-                Ability wisdom = abilities.get(AbilityTypes.WISDOM);
-                Ability charisma = abilities.get(AbilityTypes.CHARISMA);
+                AbilityBuilder abilityBuilder = new AbilityBuilder(strengthValue, dexterityValue, constitutionValue, intelligenceValue, wisdomValue, charismaValue, race);
+                Abilities abilities = abilityBuilder.setUpAbilities();
+
+                Ability strength = abilities.getStrength();
+                Ability dexterity = abilities.getDexterity();
+                Ability constitution = abilities.getConstitution();
+                Ability intelligence = abilities.getIntelligence();
+                Ability wisdom = abilities.getWisdom();
+                Ability charisma = abilities.getCharisma();
 
                 Hero hero = new Hero(id, level, xp, hp, mp, name, strength, dexterity, constitution, intelligence, wisdom, charisma, race, heroClass);
 
