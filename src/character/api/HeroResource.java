@@ -1,20 +1,26 @@
 package character.api;
 
+import character.api.dto.CreateHeroRequest;
+import character.application.CreateHeroCommand;
 import character.application.CreateHeroUseCase;
+import character.application.HeroOutput;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
-import jakarta.ws.rs.HeaderParam;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.POST;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriInfo;
+import jakarta.ws.rs.core.MediaType;
 
-@Path("/heroes")
+import java.net.URI;
+
+@Path("{id}/heroes")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class HeroResource {
 
-    private CreateHeroUseCase createHeroUseCase;
-    private CreateHeroRequestMapper requestMapper;
+    private final CreateHeroUseCase createHeroUseCase;
+    private final CreateHeroRequestMapper requestMapper;
 
     public HeroResource(CreateHeroUseCase createHeroUseCase, CreateHeroRequestMapper requestMapper) {
         this.createHeroUseCase = createHeroUseCase;
@@ -27,7 +33,10 @@ public class HeroResource {
             @NotNull @Valid CreateHeroRequest request,
             @Context UriInfo uriInfo
             ) {
-
+        CreateHeroCommand command = requestMapper.toCommand(playerId, request);
+        HeroOutput hero = createHeroUseCase.execute(command);
+        URI location = uriInfo.getAbsolutePathBuilder().path(hero.id()).build();
+        return Response.created(location).build();
     }
 }
 
