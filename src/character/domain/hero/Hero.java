@@ -115,16 +115,5 @@ public class Hero {
     }
 
     public String heroClassValue() {return heroClass.toString();}
-
-    public UUID getId() {
-        return id;
-    }
-
-    public RaceTypes getRace() {
-        return race;
-    }
-
-    public ClassTypes getHeroClass() {
-        return heroClass;
-    }
+    
 }
