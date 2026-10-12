@@ -34,7 +34,7 @@ public class HeroPersistenceMapper {
         HeroFactory factory = new HeroFactory();
 
         //incomplete - ask question
-        
+
         return new Hero(
                 UUID.fromString(model.id()),
                 new Level(model.level()),
