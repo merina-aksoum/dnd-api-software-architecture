@@ -30,4 +30,12 @@ public class Ability {
     public int calculateModifier() {
         return Math.floorDiv((score - 10), 2);
     }
+
+    public int getScore() {
+        return score;
+    }
+
+    public int getModifier() {
+        return modifier;
+    }
 }

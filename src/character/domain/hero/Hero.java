@@ -64,59 +64,55 @@ public class Hero {
             this.heroClass = heroClass;
         }
 
-    public UUID getId() {
-        return id;
+    public String id() {
+        return id.toString();
     }
 
-    public Level getLevel() {
-        return level;
+    public int level() {
+        return level.value();
     }
 
-    public ExperiencePoints getXp() {
-        return xp;
+    public int xp() {
+        return xp.getCurrentXP();
     }
 
-    public HealthPoints getHp() {
-        return hp;
+    public int hp() {
+        return hp.getCurrentHP();
     }
 
-    public MagicPoints getMp() {
-        return mp;
+    public int mp() {
+        return mp.getCurrentMP();
     }
 
-    public Name getName() {
-        return name;
+    public String name() {
+        return name.toString();
     }
 
-    public Ability getStrength() {
-        return strength;
+    public int strength() {
+        return strength.getScore();
     }
 
-    public Ability getDexterity() {
-        return dexterity;
+    public int dexterity() { return dexterity.getScore();}
+
+    public int constitution() {
+        return constitution.getScore();
     }
 
-    public Ability getConstitution() {
-        return constitution;
+    public int intelligence() {
+        return intelligence.getScore();
     }
 
-    public Ability getIntelligence() {
-        return intelligence;
+    public int charisma() {
+        return charisma.getScore();
     }
 
-    public Ability getCharisma() {
-        return charisma;
+    public int wisdom() {
+        return wisdom.getScore();
     }
 
-    public Ability getWisdom() {
-        return wisdom;
+    public String race() {
+        return race.toString();
     }
 
-    public RaceTypes getRace() {
-        return race;
-    }
-
-    public ClassTypes getHeroClass() {
-        return heroClass;
-    }
+    public String heroClass() {return heroClass.toString();}
 }

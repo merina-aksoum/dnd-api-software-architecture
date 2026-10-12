@@ -6,19 +6,19 @@ public class HeroPersistenceMapper {
 
     public HeroPersistenceModel toPersistence(Hero hero) {
         return new HeroPersistenceModel(
-                hero.getId(),
-                hero.getLevel(),
-                hero.getXp(),
-                hero.getMp(),
-                hero.getName(),
-                hero.getStrength(),
-                hero.getDexterity(),
-                hero.getConstitution(),
-                hero.getIntelligence(),
-                hero.getWisdom(),
-                hero.getCharisma(),
-                hero.getRace(),
-                hero.getHeroClass()
+                hero.id(),
+                hero.level(),
+                hero.xp(),
+                hero.mp(),
+                hero.name(),
+                hero.strength(),
+                hero.dexterity(),
+                hero.constitution(),
+                hero.intelligence(),
+                hero.wisdom(),
+                hero.charisma(),
+                hero.race(),
+                hero.heroClass()
         );
     }
 }

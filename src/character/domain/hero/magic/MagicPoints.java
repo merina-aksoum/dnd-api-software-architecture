@@ -9,6 +9,14 @@ public class MagicPoints {
         this.currentMP = maximumMP;
     }
 
+    public int getCurrentMP() {
+        return currentMP;
+    }
+
+    public int getMaximumMP() {
+        return maximumMP;
+    }
+
     public void useMP(int spellMP) {
         if (canCastSpell(spellMP)) {
             currentMP = Math.min((currentMP - spellMP), 0);
