@@ -33,7 +33,9 @@ public class Hero {
         private RaceTypes race;
         private ClassTypes heroClass;
 
-        public Hero(UUID id, Level level,
+        public Hero(
+                    UUID id,
+                    Level level,
                     ExperiencePoints xp,
                     HealthPoints hp,
                     MagicPoints mp,
