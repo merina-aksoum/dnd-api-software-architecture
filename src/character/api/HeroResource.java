@@ -10,7 +10,7 @@ import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriInfo;
 
-@Path("/restaurants")
+@Path("/heroes")
 public class HeroResource {
 
     private CreateHeroUseCase createHeroUseCase;
