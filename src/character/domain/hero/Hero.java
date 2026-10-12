@@ -5,8 +5,8 @@ import character.domain.hero.experience.ExperiencePoints;
 import character.domain.hero.health.HealthPoints;
 import character.domain.hero.level.Level;
 import character.domain.hero.magic.MagicPoints;
+import character.domain.hero.name.Name;
 
-import character.domain.hero.Name;
 import character.domain.hero.abilities.Ability;
 import character.domain.hero.races.RaceTypes;
 
@@ -110,9 +110,21 @@ public class Hero {
         return wisdom.getScore();
     }
 
-    public String race() {
+    public String raceValue() {
         return race.toString();
     }
 
-    public String heroClass() {return heroClass.toString();}
+    public String heroClassValue() {return heroClass.toString();}
+
+    public UUID getId() {
+        return id;
+    }
+
+    public RaceTypes getRace() {
+        return race;
+    }
+
+    public ClassTypes getHeroClass() {
+        return heroClass;
+    }
 }

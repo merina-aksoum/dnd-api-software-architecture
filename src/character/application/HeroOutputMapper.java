@@ -16,8 +16,8 @@ public class HeroOutputMapper {
                 hero.intelligence(),
                 hero.wisdom(),
                 hero.charisma(),
-                hero.race(),
-                hero.heroClass()
+                hero.raceValue(),
+                hero.heroClassValue()
         );
     }
 }

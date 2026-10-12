@@ -10,13 +10,16 @@ import character.domain.hero.health.HealthPoints;
 import character.domain.hero.level.Level;
 import character.domain.hero.magic.MagicPoints;
 import character.domain.hero.races.RaceTypes;
-import character.domain.hero.Name;
+import character.domain.hero.name.Name;
 
 import java.util.UUID;
 
 public class HeroFactory {
 
-        public Hero create(String nameString, int strengthValue, int dexterityValue, int constitutionValue, int intelligenceValue, int wisdomValue, int charismaValue, RaceTypes race, ClassTypes heroClass) {
+        public Hero create(String nameString, int strengthValue, int dexterityValue, int constitutionValue, int intelligenceValue, int wisdomValue, int charismaValue, String raceValue, String heroClassValue) {
+
+                RaceTypes race = RaceTypes.valueOf(raceValue);
+                ClassTypes heroClass = ClassTypes.valueOf(heroClassValue);
 
                 UUID id = UUID.randomUUID();
                 Level level = new Level(1);

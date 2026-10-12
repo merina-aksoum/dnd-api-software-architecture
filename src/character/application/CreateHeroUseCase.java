@@ -17,7 +17,6 @@ public class CreateHeroUseCase {
 
     public HeroOutput execute(CreateHeroCommand command) {
         Hero hero = heroFactory.create(
-                command.playerId(),
                 command.name(),
                 command.strength(),
                 command.dexterity(),
