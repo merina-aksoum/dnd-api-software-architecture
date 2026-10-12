@@ -4,6 +4,7 @@ public record HeroPersistenceModel(
         String id,
         int level,
         int xp,
+        int hp,
         int mp,
         String name,
         int strength,
