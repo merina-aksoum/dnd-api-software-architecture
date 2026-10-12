@@ -115,5 +115,5 @@ public class Hero {
     }
 
     public String heroClassValue() {return heroClass.toString();}
-    
+
 }
