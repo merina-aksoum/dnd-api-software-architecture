@@ -1,5 +1,6 @@
 package character.api;
 
+import character.api.dto.GetHeroResponse;
 import character.application.HeroOutput;
 
 public class HeroResponseMapper {

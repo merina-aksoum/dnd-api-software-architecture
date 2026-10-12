@@ -76,13 +76,19 @@ public class Hero {
         return xp.getCurrentXP();
     }
 
+    public int xpMax() { return xp.getMaximumXP();}
+
     public int hp() {
         return hp.getCurrentHP();
     }
 
+    public int hpMax() { return hp.getMaximumHP();}
+
     public int mp() {
         return mp.getCurrentMP();
     }
+
+    public int mpMax() { return mp.getMaximumMP();}
 
     public String name() {
         return name.toString();
@@ -92,23 +98,35 @@ public class Hero {
         return strength.getScore();
     }
 
+    public int strengthModifier() { return strength.getModifier(); }
+
     public int dexterity() { return dexterity.getScore();}
+
+    public int dexterityModifier() { return dexterity.getModifier(); }
 
     public int constitution() {
         return constitution.getScore();
     }
 
+    public int constitutionModifier() { return constitution.getModifier(); }
+
     public int intelligence() {
         return intelligence.getScore();
     }
+
+    public int intelligenceModifier() { return intelligence.getModifier(); }
 
     public int charisma() {
         return charisma.getScore();
     }
 
+    public int charismaModifier() { return charisma.getModifier(); }
+
     public int wisdom() {
         return wisdom.getScore();
     }
+
+    public int wisdomModifier() { return wisdom.getModifier(); }
 
     public String raceValue() {
         return race.toString();
