@@ -49,6 +49,7 @@ public class Hero {
                     RaceTypes race,
                     ClassTypes heroClass) {
             this.id = id;
+            this.level = level;
             this.xp = xp;
             this.hp = hp;
             this.mp = mp;
@@ -62,4 +63,60 @@ public class Hero {
             this.race = race;
             this.heroClass = heroClass;
         }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public ExperiencePoints getXp() {
+        return xp;
+    }
+
+    public HealthPoints getHp() {
+        return hp;
+    }
+
+    public MagicPoints getMp() {
+        return mp;
+    }
+
+    public Name getName() {
+        return name;
+    }
+
+    public Ability getStrength() {
+        return strength;
+    }
+
+    public Ability getDexterity() {
+        return dexterity;
+    }
+
+    public Ability getConstitution() {
+        return constitution;
+    }
+
+    public Ability getIntelligence() {
+        return intelligence;
+    }
+
+    public Ability getCharisma() {
+        return charisma;
+    }
+
+    public Ability getWisdom() {
+        return wisdom;
+    }
+
+    public RaceTypes getRace() {
+        return race;
+    }
+
+    public ClassTypes getHeroClass() {
+        return heroClass;
+    }
 }
