@@ -3,6 +3,7 @@ package character.api;
 import character.api.dto.CreateHeroRequest;
 import character.application.CreateHeroCommand;
 import character.application.CreateHeroUseCase;
+import character.application.GetHeroQuery;
 import character.application.HeroOutput;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
