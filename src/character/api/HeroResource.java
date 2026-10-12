@@ -14,7 +14,7 @@ import jakarta.ws.rs.core.MediaType;
 
 import java.net.URI;
 
-@Path("{id}/heroes")
+@Path("{playerId}/heroes")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class HeroResource {
@@ -37,6 +37,14 @@ public class HeroResource {
         HeroOutput hero = createHeroUseCase.execute(command);
         URI location = uriInfo.getAbsolutePathBuilder().path(hero.id()).build();
         return Response.created(location).build();
+    }
+
+    @GET
+    @Path("{playerId}/heroes/{heroId}")
+    public Response getHero(@HeaderParam("Player") @NotNull String playerId, @PathParam("HeroId") String heroId) {
+        GetHeroQuery query = new GetHeroQuery(heroId, playerId);
+        HeroOutput output = getHeroUseCase.execute(query);
+        return Response.ok(responseMapper.toResponse(hero)).build();
     }
 }
 
