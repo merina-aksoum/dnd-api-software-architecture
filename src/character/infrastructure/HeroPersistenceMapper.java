@@ -50,7 +50,9 @@ public class HeroPersistenceMapper {
                 model.charisma(),
                 RaceTypes.valueOf(model.race()),
                 ClassTypes.valueOf(model.heroClass())
-        )
+        );
+
+        //question: comment reconstruire dans ce cas-ci l'objet au complet à partir de valeurs simples? représentation du domaine incompatible ou potentiellement trop complexe
 
 
     }

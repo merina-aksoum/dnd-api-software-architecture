@@ -13,9 +13,4 @@ public record CreateHeroRequest(
         @NotNull String race,
         @NotNull String heroClass) {
 
-
-
-
-
-
 }
