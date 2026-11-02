@@ -12,7 +12,7 @@ public class Ability {
         this.type = type;
 
         if (!isValidAbilityValue(rolledScore)) {
-            throw new IllegalArgumentException("The value given to an ability should be between 3 and 18.");
+            throw new IllegalArgumentException();
         }
 
         this.score = applySpeciesBonus(speciesModifier);
