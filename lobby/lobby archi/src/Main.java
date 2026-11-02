@@ -1,5 +1,4 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 void main() {
     /* Informations que je sais
       * Inventaire :
@@ -10,7 +9,7 @@ void main() {
       * Armes :
       * longSword, Axe, Hammer, Knife, Arc, Stick
       * Can used one weapon at a time, etc.
-      * All the info will be add once we get an idea
+      * All the info will be add once we et an idea
       * Armor :
       * No armor, Leather armor, Metallic old-fashioned armor lmao
       */
