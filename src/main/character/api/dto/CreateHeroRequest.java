@@ -1,4 +1,4 @@
-package character.api.dto;
+package main.character.api.dto;
 
 import jakarta.validation.constraints.NotNull;
 

@@ -1,4 +1,4 @@
-package character.api;
+package main.character.api;
 
 public class HeroExceptionMapper {
 }

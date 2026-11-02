@@ -1,4 +1,4 @@
-package character.application;
+package main.character.application;
 
 public record CreateHeroCommand(
         String playerId,

@@ -1,6 +1,6 @@
-package config;
+package main.config;
 
-import character.HeroInstaller;
+
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
 
@@ -11,7 +11,7 @@ public class ApplicationContext {
 
     public static ResourceConfig createResourceConfig() {
         ResourceConfig resourceConfig = new ResourceConfig().property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE, true);
-        HeroInstaller heroInstaller = new HeroInstaller();
+        main.character.HeroInstaller heroInstaller = new main.character.HeroInstaller();
         heroInstaller.install(resourceConfig);
 
 

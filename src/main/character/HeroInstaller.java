@@ -1,14 +1,14 @@
-package character;
+package main.character;
 
-import character.api.HeroExceptionMapper;
-import character.api.HeroNotFoundExceptionMapper;
-import character.application.CreateHeroUseCase;
-import character.application.GetHeroUseCase;
-import character.application.HeroOutputMapper;
-import character.domain.hero.HeroFactory;
-import character.domain.hero.HeroRepository;
-import character.infrastructure.HeroPersistenceMapper;
-import character.infrastructure.InMemoryHeroRepository;
+import main.character.api.Hero;
+import main.character.api.HeroNotFoundExceptionMapper;
+import main.character.application.CreateHeroUseCase;
+import main.character.application.GetHeroUseCase;
+import main.character.application.HeroOutputMapper;
+import main.character.domain.hero.HeroFactory;
+import main.character.domain.hero.HeroRepository;
+import main.character.infrastructure.HeroPersistenceMapper;
+import main.character.infrastructure.InMemoryHeroRepository;
 import org.glassfish.jersey.server.ResourceConfig;
 
 public class HeroInstaller {

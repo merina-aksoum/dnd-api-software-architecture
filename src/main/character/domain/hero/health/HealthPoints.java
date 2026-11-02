@@ -1,4 +1,4 @@
-package character.domain.hero.health;
+package main.character.domain.hero.health;
 
 public class HealthPoints {
 

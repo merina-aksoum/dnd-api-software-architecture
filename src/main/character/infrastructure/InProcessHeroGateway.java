@@ -1,4 +1,4 @@
-package character.infrastructure;
+package main.character.infrastructure;
 
 public class InProcessHeroGateway {
 }

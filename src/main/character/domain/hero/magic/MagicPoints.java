@@ -1,4 +1,4 @@
-package character.domain.hero.magic;
+package main.character.domain.hero.magic;
 
 public class MagicPoints {
     private int currentMP;

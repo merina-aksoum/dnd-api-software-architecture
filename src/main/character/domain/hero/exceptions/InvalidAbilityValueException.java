@@ -1,4 +1,4 @@
-package character.domain.hero.exceptions;
+package main.character.domain.hero.exceptions;
 
 public class InvalidAbilityValueException extends RuntimeException {
     public InvalidAbilityValueException() {

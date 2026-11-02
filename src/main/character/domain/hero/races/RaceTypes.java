@@ -1,6 +1,6 @@
-package character.domain.hero.races;
+package main.character.domain.hero.races;
 
-import character.domain.hero.abilities.AbilityTypes;
+import main.character.domain.hero.abilities.AbilityTypes;
 
 import java.util.Map;
 

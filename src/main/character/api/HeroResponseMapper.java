@@ -1,7 +1,7 @@
-package character.api;
+package main.character.api;
 
-import character.api.dto.GetHeroResponse;
-import character.application.HeroOutput;
+import main.character.api.dto.GetHeroResponse;
+import main.character.application.HeroOutput;
 
 public class HeroResponseMapper {
     public GetHeroResponse toResponse(HeroOutput hero) {

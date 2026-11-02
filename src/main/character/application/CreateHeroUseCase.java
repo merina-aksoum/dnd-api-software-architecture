@@ -1,8 +1,8 @@
-package character.application;
+package main.character.application;
 
-import character.domain.hero.HeroFactory;
-import character.domain.hero.HeroRepository;
-import character.domain.hero.Hero;
+import main.character.domain.hero.HeroFactory;
+import main.character.domain.hero.HeroRepository;
+import main.character.domain.hero.Hero;
 
 public class CreateHeroUseCase {
     private HeroFactory heroFactory;

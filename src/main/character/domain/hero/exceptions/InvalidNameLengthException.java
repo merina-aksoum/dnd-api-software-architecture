@@ -1,4 +1,4 @@
-package character.domain.hero.exceptions;
+package main.character.domain.hero.exceptions;
 
 public class InvalidNameLengthException extends RuntimeException {
     public InvalidNameLengthException() {

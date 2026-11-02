@@ -1,14 +1,14 @@
-package character.domain.hero;
+package main.character.domain.hero;
 
-import character.domain.hero.classes.ClassTypes;
-import character.domain.hero.experience.ExperiencePoints;
-import character.domain.hero.health.HealthPoints;
-import character.domain.hero.level.Level;
-import character.domain.hero.magic.MagicPoints;
-import character.domain.hero.name.Name;
+import main.character.domain.hero.classes.ClassTypes;
+import main.character.domain.hero.experience.ExperiencePoints;
+import main.character.domain.hero.health.HealthPoints;
+import main.character.domain.hero.level.Level;
+import main.character.domain.hero.magic.MagicPoints;
+import main.character.domain.hero.name.Name;
 
-import character.domain.hero.abilities.Ability;
-import character.domain.hero.races.RaceTypes;
+import main.character.domain.hero.abilities.Ability;
+import main.character.domain.hero.races.RaceTypes;
 
 import java.util.UUID;
 

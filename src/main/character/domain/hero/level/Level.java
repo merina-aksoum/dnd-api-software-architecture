@@ -1,4 +1,4 @@
-package character.domain.hero.level;
+package main.character.domain.hero.level;
 
 public class Level {
 

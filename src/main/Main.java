@@ -1,6 +1,7 @@
-import java.net.URI;
+package main;
 
-import config.ApplicationContext;
+import java.net.URI;
+import main.config.ApplicationContext;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 
 

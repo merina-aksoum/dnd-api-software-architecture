@@ -1,7 +1,7 @@
-package character.domain.hero.name;
+package main.character.domain.hero.name;
 
-import character.domain.hero.exceptions.InvalidNameFormatException;
-import character.domain.hero.exceptions.InvalidNameLengthException;
+import main.character.domain.hero.exceptions.InvalidNameFormatException;
+import main.character.domain.hero.exceptions.InvalidNameLengthException;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

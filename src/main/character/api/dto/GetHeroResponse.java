@@ -1,4 +1,4 @@
-package character.api.dto;
+package main.character.api.dto;
 
 public record GetHeroResponse(String id,
                               int level,

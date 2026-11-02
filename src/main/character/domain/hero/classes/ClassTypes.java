@@ -1,4 +1,4 @@
-package character.domain.hero.classes;
+package main.character.domain.hero.classes;
 
 public enum ClassTypes {
 

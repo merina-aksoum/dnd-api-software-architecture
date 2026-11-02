@@ -1,4 +1,4 @@
-package character.domain.hero;
+package main.character.domain.hero;
 
 import java.util.UUID;
 

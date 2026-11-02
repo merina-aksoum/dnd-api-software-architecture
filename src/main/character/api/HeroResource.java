@@ -1,7 +1,7 @@
-package character.api;
+package main.character.api;
 
-import character.api.dto.CreateHeroRequest;
-import character.application.*;
+import main.character.api.dto.CreateHeroRequest;
+import main.character.application.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.ws.rs.*;

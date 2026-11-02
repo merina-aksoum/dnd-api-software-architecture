@@ -1,6 +1,6 @@
-package character.application;
+package main.character.application;
 
-import character.domain.hero.Hero;
+import main.character.domain.hero.Hero;
 
 public class HeroOutputMapper {
     public HeroOutput toOutput(Hero hero) {

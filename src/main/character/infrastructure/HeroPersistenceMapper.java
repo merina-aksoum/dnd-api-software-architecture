@@ -1,16 +1,16 @@
-package character.infrastructure;
+package main.character.infrastructure;
 
-import character.domain.hero.Hero;
-import character.domain.hero.HeroFactory;
-import character.domain.hero.abilities.Ability;
-import character.domain.hero.abilities.AbilityTypes;
-import character.domain.hero.classes.ClassTypes;
-import character.domain.hero.experience.ExperiencePoints;
-import character.domain.hero.health.HealthPoints;
-import character.domain.hero.level.Level;
-import character.domain.hero.magic.MagicPoints;
-import character.domain.hero.name.Name;
-import character.domain.hero.races.RaceTypes;
+import main.character.domain.hero.Hero;
+import main.character.domain.hero.HeroFactory;
+import main.character.domain.hero.abilities.Ability;
+import main.character.domain.hero.abilities.AbilityTypes;
+import main.character.domain.hero.classes.ClassTypes;
+import main.character.domain.hero.experience.ExperiencePoints;
+import main.character.domain.hero.health.HealthPoints;
+import main.character.domain.hero.level.Level;
+import main.character.domain.hero.magic.MagicPoints;
+import main.character.domain.hero.name.Name;
+import main.character.domain.hero.races.RaceTypes;
 
 import java.util.UUID;
 

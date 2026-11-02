@@ -1,4 +1,4 @@
-package character.domain.hero.experience;
+package main.character.domain.hero.experience;
 
 public class ExperiencePoints {
 

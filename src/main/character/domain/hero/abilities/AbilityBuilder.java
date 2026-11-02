@@ -1,6 +1,6 @@
-package character.domain.hero.abilities;
+package main.character.domain.hero.abilities;
 
-import character.domain.hero.races.RaceTypes;
+import main.character.domain.hero.races.RaceTypes;
 
 public class AbilityBuilder {
 

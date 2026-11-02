@@ -1,7 +1,7 @@
-package character.application;
+package main.character.application;
 
-import character.domain.hero.Hero;
-import character.domain.hero.HeroRepository;
+import main.character.domain.hero.Hero;
+import main.character.domain.hero.HeroRepository;
 
 import java.util.UUID;
 

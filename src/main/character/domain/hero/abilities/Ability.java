@@ -1,6 +1,6 @@
-package character.domain.hero.abilities;
+package main.character.domain.hero.abilities;
 
-import character.domain.hero.exceptions.InvalidAbilityValueException;
+import main.character.domain.hero.exceptions.InvalidAbilityValueException;
 
 public class Ability {
 
