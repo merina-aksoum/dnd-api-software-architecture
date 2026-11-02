@@ -6,15 +6,16 @@ public class Ability {
     private int rolledScore;
     private int score;
     private int modifier;
+    private int temporaryModifier;
 
-    public Ability(AbilityTypes type, int rolledScore, int speciesBonusMalus) {
+    public Ability(AbilityTypes type, int rolledScore, int speciesModifier) {
         this.type = type;
 
         if (!isValidAbilityValue(rolledScore)) {
             throw new IllegalArgumentException("The value given to an ability should be between 3 and 18.");
         }
 
-        this.score = applySpeciesBonus(speciesBonusMalus);
+        this.score = applySpeciesBonus(speciesModifier);
 
         this.modifier = calculateModifier();
     }
@@ -23,12 +24,24 @@ public class Ability {
         return (abilityValue >= 3 && abilityValue <= 18);
     }
 
-    private int applySpeciesBonus(int speciesBonusMalus) {
-        return Math.min((rolledScore + speciesBonusMalus), 20);
+    private int applySpeciesBonus(int speciesModifier) {
+        return Math.min((rolledScore + speciesModifier), 20);
     }
 
     public int calculateModifier() {
         return Math.floorDiv((score - 10), 2);
+    }
+
+    public void applyBonus(int temporaryModifier) {
+        this.temporaryModifier = temporaryModifier;
+        score = Math.min((score + temporaryModifier), 20);
+        modifier = calculateModifier();
+    }
+
+    public void applyMalus(int temporaryModifier) {
+        this.temporaryModifier = temporaryModifier;
+        score = Math.max((score - temporaryModifier), 0);
+        modifier = calculateModifier();
     }
 
     public int getScore() {

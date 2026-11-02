@@ -24,7 +24,7 @@ public class HeroInstaller {
                 new HeroFactory(), heroRepository, outputMapper);
         GetHeroUseCase getHeroUseCase = new GetHeroUseCase(heroRepository, outputMapper);
         resourceConfig.register(new HeroExceptionMapper());
-        resourceConfig.register(new HeroNotFoundExceptionMapper())
+        resourceConfig.register(new HeroNotFoundExceptionMapper());
     }
 
     public GetHeroUseCase getHeroUseCase() {return getHeroUseCase; }
