@@ -1,5 +1,7 @@
 package character;
 
+import character.api.HeroExceptionMapper;
+import character.api.HeroNotFoundExceptionMapper;
 import character.application.CreateHeroUseCase;
 import character.application.GetHeroUseCase;
 import character.application.HeroOutputMapper;

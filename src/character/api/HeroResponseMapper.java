@@ -4,7 +4,7 @@ import character.api.dto.GetHeroResponse;
 import character.application.HeroOutput;
 
 public class HeroResponseMapper {
-    public GetHeroResponse toResponse(HeroOutput hero) {
+    /*public GetHeroResponse toResponse(HeroOutput hero) {
         return new GetHeroResponse(
                 hero.id(),
                 hero.level(),
@@ -20,5 +20,5 @@ public class HeroResponseMapper {
                 hero.race(),
                 hero.heroClass()
         )
-    }
+    }*/
 }
