@@ -1,0 +1,7 @@
+Domain: entities, value objects, and business rules (Loan, Lobby, Game). Plain code, no persistence annotations, no HTTP, no framework imports.
+
+Application: use cases (JoinLobby, StartGame). It orchestrates: load aggregate, call domain method, save, publish events. It defines interfaces for what it needs from the outside (ILobbyRepository, IClock, IEventPublisher) but does not implement them.
+
+Infrastructure: implements those interfaces (SQL repositories, Redis, WebSocket publishers, the persistence mappers and models from your Loan example). It depends on Application and Domain because it implements their interfaces and builds domain objects.
+
+API: controllers or handlers that translate HTTP/WebSocket into use case calls and results into responses. It depends on Application, not on repository implementations.

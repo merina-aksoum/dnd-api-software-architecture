@@ -1,0 +1,10 @@
+Pour creer un lobby, nous avons besoin de savoir quoi?
+1. Son ID (le numéro du lobby)
+2. Le nombre de joueurs qui peuvent joindre (MAX : 4)
+3. Un start/stop button (Créer une session et pouvoir l'arrêter)
+
+
+** Maybe an option to play solo?
+
+https://partner.steamgames.com/doc/features/multiplayer/matchmaking
+https://docs.unity.com/en-us/mps-sdk/advanced-config/relay-vs-lobby

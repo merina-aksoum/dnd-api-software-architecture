@@ -1,4 +1,0 @@
-Site web dont je prend l'inspiration pour le code
-
-    https://www.baeldung.com/java-uuid
-    https://www.uuidgenerator.net/dev-corner/java
