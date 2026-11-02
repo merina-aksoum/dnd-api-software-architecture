@@ -2,9 +2,14 @@ package character.infrastructure;
 
 import character.domain.hero.Hero;
 import character.domain.hero.HeroFactory;
+import character.domain.hero.abilities.Ability;
+import character.domain.hero.abilities.AbilityTypes;
 import character.domain.hero.classes.ClassTypes;
 import character.domain.hero.experience.ExperiencePoints;
+import character.domain.hero.health.HealthPoints;
 import character.domain.hero.level.Level;
+import character.domain.hero.magic.MagicPoints;
+import character.domain.hero.name.Name;
 import character.domain.hero.races.RaceTypes;
 
 import java.util.UUID;
@@ -33,21 +38,19 @@ public class HeroPersistenceMapper {
     public Hero toDomain(HeroPersistenceModel model) {
         HeroFactory factory = new HeroFactory();
 
-        //incomplete - ask question
-
         return new Hero(
                 UUID.fromString(model.id()),
                 new Level(model.level()),
-                new ExperiencePoints(),
-                model.hp(),
-                model.mp(),
-                model.name(),
-                model.strength(),
-                model.dexterity(),
-                model.constitution(),
-                model.intelligence(),
-                model.wisdom(),
-                model.charisma(),
+                new ExperiencePoints(1, 1), //PLACEHOLDER
+                new HealthPoints(1),
+                new MagicPoints(1),
+                new Name("whatever"),
+                new Ability(AbilityTypes.STRENGTH, 3, 6),
+                new Ability(AbilityTypes.STRENGTH, 3, 6),
+                new Ability(AbilityTypes.STRENGTH, 3, 6),
+                new Ability(AbilityTypes.STRENGTH, 3, 6),
+                new Ability(AbilityTypes.STRENGTH, 3, 6),
+                new Ability(AbilityTypes.STRENGTH, 3, 6),
                 RaceTypes.valueOf(model.race()),
                 ClassTypes.valueOf(model.heroClass())
         );
@@ -57,3 +60,4 @@ public class HeroPersistenceMapper {
 
     }
 }
+

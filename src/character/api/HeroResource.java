@@ -1,10 +1,7 @@
 package character.api;
 
 import character.api.dto.CreateHeroRequest;
-import character.application.CreateHeroCommand;
-import character.application.CreateHeroUseCase;
-import character.application.GetHeroQuery;
-import character.application.HeroOutput;
+import character.application.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.ws.rs.*;
@@ -22,10 +19,14 @@ public class HeroResource {
 
     private final CreateHeroUseCase createHeroUseCase;
     private final CreateHeroRequestMapper requestMapper;
+    private final GetHeroUseCase getHeroUseCase;
+    private final HeroResponseMapper responseMapper;
 
-    public HeroResource(CreateHeroUseCase createHeroUseCase, CreateHeroRequestMapper requestMapper) {
+    public HeroResource(CreateHeroUseCase createHeroUseCase, CreateHeroRequestMapper requestMapper, GetHeroUseCase getHeroUseCase, HeroResponseMapper responseMapper) {
         this.createHeroUseCase = createHeroUseCase;
         this.requestMapper = requestMapper;
+        this.getHeroUseCase = getHeroUseCase;
+        this.responseMapper = responseMapper;
     }
 
     @POST
@@ -44,7 +45,7 @@ public class HeroResource {
     @Path("{playerId}/heroes/{heroId}")
     public Response getHero(@HeaderParam("Player") @NotNull String playerId, @PathParam("HeroId") String heroId) {
         GetHeroQuery query = new GetHeroQuery(heroId, playerId);
-        HeroOutput output = getHeroUseCase.execute(query);
+        HeroOutput hero = getHeroUseCase.execute(query);
         return Response.ok(responseMapper.toResponse(hero)).build();
     }
 }

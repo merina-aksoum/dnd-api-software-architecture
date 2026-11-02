@@ -8,6 +8,7 @@ public class HeroOutputMapper {
                 hero.id(),
                 hero.level(),
                 hero.xp(),
+                hero.hp(),
                 hero.mp(),
                 hero.name(),
                 hero.strength(),
