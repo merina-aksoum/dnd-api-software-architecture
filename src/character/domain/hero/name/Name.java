@@ -1,5 +1,8 @@
 package character.domain.hero.name;
 
+import character.domain.hero.exceptions.InvalidNameFormatException;
+import character.domain.hero.exceptions.InvalidNameLengthException;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,11 +15,11 @@ public class Name {
         name = name.trim();
 
         if (name.length() < 2 || name.length() > 30) {
-            throw new IllegalArgumentException("The hero name should have between 2 and 30 characters.");
+            throw new InvalidNameLengthException();
         }
 
         if (!isValidName(name)) {
-            throw new IllegalArgumentException("The name should only contain letters and spaces.");
+            throw new InvalidNameFormatException();
         }
 
         //verify in the list that the name is not found twice
