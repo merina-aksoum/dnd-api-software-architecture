@@ -1,5 +1,3 @@
-package ExtraStuff;
-
 public class Armor extends Items {
     private int classeArmure;
 

@@ -11,7 +11,7 @@ void main() {
       * longSword, Axe, Hammer, Knife, Arc, Stick
       * Can used one weapon at a time, etc.
       * All the info will be add once we get an idea
-      * ExtraStuff.Armor :
+      * Armor :
       * No armor, Leather armor, Metallic old-fashioned armor lmao
       */
 
