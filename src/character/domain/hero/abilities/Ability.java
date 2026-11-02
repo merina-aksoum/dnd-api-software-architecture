@@ -1,5 +1,7 @@
 package character.domain.hero.abilities;
 
+import character.domain.hero.exceptions.InvalidAbilityValueException;
+
 public class Ability {
 
     private AbilityTypes type;
@@ -12,7 +14,7 @@ public class Ability {
         this.type = type;
 
         if (!isValidAbilityValue(rolledScore)) {
-            throw new IllegalArgumentException();
+            throw new InvalidAbilityValueException();
         }
 
         this.score = applySpeciesBonus(speciesModifier);
