@@ -2,7 +2,7 @@ package main.player;
 
 import main.player.api.*;
 import org.glassfish.jersey.server.ResourceConfig;
-import player.api.*;
+import main.player.api.*;
 import main.player.application.PlayerOutputMapper;
 import main.player.application.usecase.CreatePlayerUseCase;
 import main.player.application.usecase.GetPlayerUseCase;
