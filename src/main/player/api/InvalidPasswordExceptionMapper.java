@@ -8,7 +8,7 @@ import main.player.domain.exception.InvalidPasswordException;
 public class InvalidPasswordExceptionMapper implements ExceptionMapper<InvalidPasswordException> {
     @Override
     public Response toResponse(InvalidPasswordException exception) {
-        return Response.status(Response.Status.UNAUTHORIZED)
+        return Response.status(Response.Status.BAD_REQUEST)
                 .type(MediaType.TEXT_PLAIN)
                 .entity(exception.getMessage())
                 .build();
