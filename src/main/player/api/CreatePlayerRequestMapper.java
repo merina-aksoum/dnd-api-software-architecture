@@ -8,7 +8,8 @@ public class CreatePlayerRequestMapper {
         return new CreatePlayerCommand(
                 request.id(),
                 request.username(),
-                request.password()
+                request.password(),
+                request.email()
         );
     }
 }

@@ -8,7 +8,8 @@ public class PlayerResponseMapper {
         return new GetPlayerResponse(
                 player.id(),
                 player.username(),
-                player.password()
+                player.password(),
+                player.email()
         );
     }
 }

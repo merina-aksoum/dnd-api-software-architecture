@@ -25,7 +25,8 @@ public class CreatePlayerUseCase {
         Player player = playerFactory.create(
                 command.id(),
                 command.username(),
-                command.password());
+                command.password(),
+                command.email());
 
         playerRepository.save(player);
 

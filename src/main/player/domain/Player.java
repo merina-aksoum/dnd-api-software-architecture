@@ -4,16 +4,18 @@ import java.util.Objects;
 
 public class Player {
     private Username username;
-    private Password password; // TODO: Find a way to make actually secured passwords
+    private Password password;
     private PlayerId id;
+    private Email email;
 
     public Player(
             PlayerId id,
             Username username,
-            Password password) {
+            Password password, Email email) {
         this.id = Objects.requireNonNull(id);
         this.username = Objects.requireNonNull(username);
         this.password = Objects.requireNonNull(password);
+        this.email = Objects.requireNonNull(email);
     }
 
     public Username getUsername() {
@@ -26,5 +28,9 @@ public class Player {
 
     public PlayerId getId() {
         return id;
+    }
+
+    public Email getEmail() {
+        return email;
     }
 }

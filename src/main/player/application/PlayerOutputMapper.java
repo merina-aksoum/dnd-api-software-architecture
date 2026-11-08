@@ -7,6 +7,7 @@ public class PlayerOutputMapper {
         return new PlayerOutput(
                 player.getId().value(),
                 player.getUsername().value(),
-                player.getPassword().value());
+                player.getPassword().value(),
+                player.getEmail().value());
     }
 }
