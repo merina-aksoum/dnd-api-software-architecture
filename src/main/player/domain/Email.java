@@ -5,13 +5,16 @@ import main.player.domain.exception.InvalidEmailException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public record Email (String value) {
+public record Email(String value) {
     public Email {
-        Pattern pattern = Pattern.compile("^(.+)@(\\S+) $.");
-        Matcher matcher = pattern.matcher(value);
-        final boolean IS_VALID = matcher.find();
+        boolean isFound = false;
+        if (value != null) {
+            Pattern pattern = Pattern.compile("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+            Matcher matcher = pattern.matcher(value);
+            isFound = matcher.find();
+        }
 
-        if (!IS_VALID) {
+        if (!isFound || value.isBlank()) {
             throw new InvalidEmailException(value);
         }
     }

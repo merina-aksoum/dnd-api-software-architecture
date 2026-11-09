@@ -7,18 +7,14 @@ import main.player.domain.exception.InvalidUsernameException;
 
 public record Username(String value) {
     public Username {
-        String notLetterCheck = "[^(a-z, A-Z)]";
-        String notNumberCheck = "[^0-9]";
-        String notSpaceCheck = "[^\\s]";
-        final int MIN_LENGTH = 3;
-        final int MAX_LENGTH = 18;
+        boolean isValid = false;
+        if (value != null) {
+            Pattern pattern = Pattern.compile("^([a-zA-z0-9_]){3,20}$");
+            Matcher matcher = pattern.matcher(value);
+            isValid = matcher.find();
+        }
 
-        Pattern pattern = Pattern.compile(notLetterCheck + notNumberCheck + notSpaceCheck);
-        Matcher matcher = pattern.matcher(value);
-        final int LENGTH = value.length();
-        final boolean RESPECTS_LENGTH_LIMITS = LENGTH >= MIN_LENGTH && LENGTH <= MAX_LENGTH;
-        final boolean IS_VALID = !matcher.find() & RESPECTS_LENGTH_LIMITS;
-        if (!IS_VALID) {
+        if (!isValid || value.isBlank()) {
             throw new InvalidUsernameException();
         }
     }
