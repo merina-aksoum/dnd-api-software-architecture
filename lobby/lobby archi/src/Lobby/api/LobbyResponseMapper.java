@@ -4,7 +4,7 @@ import Lobby.api.dto.GetLobbyResponse;
 import Lobby.application.LobbyOutput;
 
 public class LobbyResponseMapper {
-    public GetLobbyResponse toGetLobbyResponse(LobbyOutput lobby) {
+    public GetLobbyResponse toResponse(LobbyOutput lobby) {
         return new GetLobbyResponse(
                 lobby.lobbyId(),
                 lobby.capacity(),
