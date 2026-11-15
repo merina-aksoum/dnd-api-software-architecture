@@ -5,5 +5,4 @@ public record LobbyOutput (
         String state,
         List<PlayerRepresentation> players,
         int availableSeats) {
-
 }
