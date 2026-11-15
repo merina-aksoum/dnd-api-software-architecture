@@ -2,6 +2,7 @@ package Lobby.api.dto;
 
 public record GetLobbyResponse(
         String lobbyId,
-        int capacity,
-        String status) {
+        String state,
+        List<PlayerRepresentation> players,
+        int availableSeats) {
 }
