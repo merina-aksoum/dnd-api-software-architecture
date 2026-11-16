@@ -6,13 +6,16 @@ public class Lobby {
     private final LobbyId lobbyId;
     private final Capacity capacity;
     private final LobbyStatus status;
+    private final List<LobbyPlayer> players;
 
     public Lobby(LobbyId lobbyId,
                  Capacity capacity,
-                 LobbyStatus status) {
+                 LobbyStatus status,
+                 List<LobbyPlayer> players) {
         this.lobbyId = Objects.requireNonNull(lobbyId);
         this.capacity = Objects.requireNonNull(capacity);
         this.status = Objects.requireNonNull(status);
+        this.players = players;
     }
 
     public LobbyId lobbyId() {
@@ -24,6 +27,7 @@ public class Lobby {
     public LobbyStatus status() {
         return status;
     }
+    public List<LobbyPlayer> players() { return players;}
     @Override
     public boolean equals(Object o) {
         return o instanceof Lobby lobby && lobbyId.equals(lobbyId);
