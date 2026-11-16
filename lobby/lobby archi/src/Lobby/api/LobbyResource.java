@@ -57,8 +57,7 @@ public class LobbyResource {
     public Response getLobbies(
             @HeaderParam("Lobbies")
     ) {
-        GetLobbiesQuery query = new GetLobbiesQuery();
-        LobbiesOutput lobbies = getLobbiesUseCase.execute(query);
+        LobbiesOutput lobbies = getLobbiesUseCase.execute();
         return Response.ok(responseMapper.toResponse(lobbies)).build();
     }
 }

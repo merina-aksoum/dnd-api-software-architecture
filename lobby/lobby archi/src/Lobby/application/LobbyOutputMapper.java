@@ -5,9 +5,10 @@ import Lobby.domain.Lobby;
 public class LobbyOutputMapper {
     public LobbyOutput toOutput(Lobby lobby) {
         return new LobbyOutput(
-                lobby.lobbyId(),
-                lobby.status(),
-                lobby.capacity()
+                lobby.lobbyId().value(),
+                lobby.status().toString(),
+                lobby.players(),
+                lobby.capacity().value()
         );
     }
 }
