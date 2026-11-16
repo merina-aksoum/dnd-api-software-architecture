@@ -4,6 +4,7 @@ import Lobby.domain.Lobby;
 import Lobby.domain.LobbyId;
 import Lobby.domain.LobbyRepository;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -24,5 +25,10 @@ public class InMemoryLobbyRepository implements LobbyRepository {
     public Lobby fetchById(LobbyId lobbyId) {
         LobbyPersistenceModel lobby = lobbies.get(lobbyId.value());
         return persistenceMapper.toDomain(lobby);
+    }
+
+    @Override
+    public Map<String, LobbyPersistenceModel> fetchLobbies() {
+        return lobbies;
     }
 }
