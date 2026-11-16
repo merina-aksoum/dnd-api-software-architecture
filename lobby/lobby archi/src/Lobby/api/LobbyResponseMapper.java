@@ -10,4 +10,8 @@ public class LobbyResponseMapper {
                 lobby.capacity(),
                 lobby.status());
     }
+
+    public GetLobbiesResponse toResponse(LobbiesOutput lobbies) {
+        return new GetLobbiesResponse(lobbies);
+    }
 }
