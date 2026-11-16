@@ -1,20 +1,25 @@
 package Lobby.domain;
 
 import java.util.Objects;
+import java.util.List;
+
 
 public class Lobby {
     private final LobbyId lobbyId;
-    private final Capacity capacity;
     private final LobbyStatus status;
+    private final PlayerId hostId;
+    private final Capacity capacity;
     private final List<LobbyPlayer> players;
 
     public Lobby(LobbyId lobbyId,
-                 Capacity capacity,
                  LobbyStatus status,
+                 PlayerId hostId,
+                 Capacity capacity,
                  List<LobbyPlayer> players) {
         this.lobbyId = Objects.requireNonNull(lobbyId);
-        this.capacity = Objects.requireNonNull(capacity);
         this.status = Objects.requireNonNull(status);
+        this.hostId = hostId;
+        this.capacity = Objects.requireNonNull(capacity);
         this.players = players;
     }
 
@@ -28,6 +33,8 @@ public class Lobby {
         return status;
     }
     public List<LobbyPlayer> players() { return players;}
+    public int playerCount() { return players.size();}
+    public PlayerId hostId() {return hostId;}
     @Override
     public boolean equals(Object o) {
         return o instanceof Lobby lobby && lobbyId.equals(lobbyId);
