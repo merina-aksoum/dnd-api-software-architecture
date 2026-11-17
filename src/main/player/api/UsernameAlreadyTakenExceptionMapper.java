@@ -1,4 +1,4 @@
-package main.player.api.dto;
+package main.player.api;
 
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
