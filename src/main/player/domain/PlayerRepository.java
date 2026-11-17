@@ -2,5 +2,6 @@ package main.player.domain;
 
 public interface PlayerRepository {
     void save(Player player);
-    Player fetchById(PlayerId id);
+    Player fetchByUsername(Username username);
+    boolean isUsed(Email email, Username username);
 }

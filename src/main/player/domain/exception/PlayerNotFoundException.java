@@ -1,9 +1,9 @@
 package main.player.domain.exception;
 
-import main.player.domain.PlayerId;
+import main.player.domain.Username;
 
 public class PlayerNotFoundException extends PlayerException {
-    public PlayerNotFoundException(PlayerId id) {
-        super("Player with id " + id + "not found");
+    public PlayerNotFoundException(Username username) {
+        super("Player with username " + username + "not found");
     }
 }
