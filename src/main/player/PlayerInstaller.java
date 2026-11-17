@@ -38,5 +38,6 @@ public class PlayerInstaller {
         resourceConfig.register(new PlayerNotFoundExceptionMapper());
         resourceConfig.register(new InvalidPasswordExceptionMapper());
         resourceConfig.register(new InvalidEmailExceptionMapper());
+        resourceConfig.register(new PasswordTooShortExceptionMapper());
     }
 }
