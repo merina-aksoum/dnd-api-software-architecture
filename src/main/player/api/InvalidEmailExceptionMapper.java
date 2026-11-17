@@ -8,7 +8,7 @@ import main.player.domain.exception.InvalidEmailException;
 public class InvalidEmailExceptionMapper implements ExceptionMapper<InvalidEmailException> {
     @Override
     public Response toResponse(InvalidEmailException exception) {
-        return Response.status(Response.Status.UNAUTHORIZED)
+        return Response.status(Response.Status.BAD_REQUEST)
                 .type(MediaType.TEXT_PLAIN)
                 .entity(exception.getMessage())
                 .build();
