@@ -15,7 +15,7 @@ public record Username(String value) {
         }
 
         if (!isValid || value.isBlank()) {
-            throw new InvalidUsernameException();
+            throw new InvalidUsernameException(value);
         }
     }
 }
