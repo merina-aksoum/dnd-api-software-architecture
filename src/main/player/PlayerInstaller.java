@@ -1,6 +1,7 @@
 package main.player;
 
 import main.player.api.*;
+import main.player.api.dto.UsernameAlreadyTakenExceptionMapper;
 import org.glassfish.jersey.server.ResourceConfig;
 import main.player.api.*;
 import main.player.application.PlayerOutputMapper;
@@ -39,5 +40,6 @@ public class PlayerInstaller {
         resourceConfig.register(new InvalidPasswordExceptionMapper());
         resourceConfig.register(new InvalidEmailExceptionMapper());
         resourceConfig.register(new PasswordTooShortExceptionMapper());
+        resourceConfig.register(new UsernameAlreadyTakenExceptionMapper());
     }
 }
