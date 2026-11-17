@@ -4,7 +4,9 @@ import main.player.domain.Email;
 import main.player.domain.Player;
 import main.player.domain.PlayerRepository;
 import main.player.domain.Username;
+import main.player.domain.exception.EmailAlreadyUsedException;
 import main.player.domain.exception.PlayerNotFoundException;
+import main.player.domain.exception.UsernameAlreadyUsedException;
 
 import java.util.Map;
 import java.util.Objects;
@@ -36,8 +38,11 @@ public class InMemoryPlayerRepository implements PlayerRepository {
     @Override
     public boolean isUsed(Email email, Username username) {
         for (PlayerPersistenceModel player : players.values()) {
-            if (Objects.equals(player.email(), email.value()) || Objects.equals(player.username(), username.value())) {
-                return true;
+            if (Objects.equals(player.email(), email.value())) {
+                throw new EmailAlreadyUsedException(email);
+            }
+            if (Objects.equals(player.username(), username.value())) {
+                throw new UsernameAlreadyUsedException(username);
             }
         }
         return false;

@@ -3,9 +3,7 @@ package main.player.application.usecase;
 import main.player.application.CreatePlayerCommand;
 import main.player.application.PlayerOutput;
 import main.player.application.PlayerOutputMapper;
-import main.player.domain.PlayerFactory;
-import main.player.domain.PlayerRepository;
-import main.player.domain.Player;
+import main.player.domain.*;
 
 public class CreatePlayerUseCase {
     private final PlayerFactory playerFactory;
@@ -26,6 +24,14 @@ public class CreatePlayerUseCase {
                 command.username(),
                 command.password(),
                 command.email());
+
+        if (playerRepository.isUsed(player.getEmail(), player.getUsername())) {
+            return outputMapper.toOutput(new Player(
+                    new Username(""),
+                    new Password(""),
+                    new Email("")
+            ));
+        }
 
         playerRepository.save(player);
 
