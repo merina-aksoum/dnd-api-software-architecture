@@ -1,11 +1,7 @@
 package main.player.domain.exception;
 
 public class InvalidUsernameException extends PlayerException {
-    public InvalidUsernameException() {
-        super("""
-                Username is invalid:
-                    * Username length must be between 3 and 18 characters long
-                    * Username may not contain special characters
-                    * Username may not contains spaces""");
+    public InvalidUsernameException(String username) {
+        super(String.format("Username %s is invalid. A username can only contain letters, numbers and underscores", username));
     }
 }
