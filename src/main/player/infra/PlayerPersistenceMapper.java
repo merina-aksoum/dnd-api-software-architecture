@@ -4,7 +4,7 @@ import main.player.domain.*;
 
 public class PlayerPersistenceMapper {
 
-    private final PasswordHash passwordHash = new PasswordHash();
+    private final Jargon2PasswordHash jargon2PasswordHash = new Jargon2PasswordHash();
 
     public PlayerPersistenceModel toPersistence(Player player) {
         return new PlayerPersistenceModel(
