@@ -1,9 +1,8 @@
 package main.player;
 
 import main.player.api.*;
-import main.player.api.dto.UsernameAlreadyTakenExceptionMapper;
+import main.player.api.UsernameAlreadyTakenExceptionMapper;
 import org.glassfish.jersey.server.ResourceConfig;
-import main.player.api.*;
 import main.player.application.PlayerOutputMapper;
 import main.player.application.usecase.CreatePlayerUseCase;
 import main.player.application.usecase.GetPlayerUseCase;
@@ -41,5 +40,6 @@ public class PlayerInstaller {
         resourceConfig.register(new InvalidEmailExceptionMapper());
         resourceConfig.register(new PasswordTooShortExceptionMapper());
         resourceConfig.register(new UsernameAlreadyTakenExceptionMapper());
+        resourceConfig.register(new EmailAlreadyUsedExceptionMapper());
     }
 }
