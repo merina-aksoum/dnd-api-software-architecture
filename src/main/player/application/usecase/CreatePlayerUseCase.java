@@ -23,7 +23,6 @@ public class CreatePlayerUseCase {
 
     public PlayerOutput execute(CreatePlayerCommand command) {
         Player player = playerFactory.create(
-                command.id(),
                 command.username(),
                 command.password(),
                 command.email());

@@ -3,9 +3,9 @@ package main.player.application.usecase;
 import main.player.application.GetPlayerQuery;
 import main.player.application.PlayerOutput;
 import main.player.application.PlayerOutputMapper;
-import main.player.domain.PlayerId;
 import main.player.domain.PlayerRepository;
 import main.player.domain.Player;
+import main.player.domain.Username;
 import main.player.domain.exception.PlayerNotFoundException;
 
 public class GetPlayerUseCase {
@@ -21,11 +21,11 @@ public class GetPlayerUseCase {
     }
 
     public PlayerOutput execute(GetPlayerQuery query) {
-        PlayerId playerId = new PlayerId(query.playerId());
-        Player player = playerRepository.fetchById(playerId);
+        Username username = new Username(query.username());
+        Player player = playerRepository.fetchByUsername(username);
 
         if (player == null) {
-            throw new PlayerNotFoundException(playerId);
+            throw new PlayerNotFoundException(username);
         }
 
         return outputMapper.toOutput(player);

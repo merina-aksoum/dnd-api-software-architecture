@@ -1,11 +1,13 @@
 package main.player.infra;
 
+import main.player.domain.Email;
 import main.player.domain.Player;
-import main.player.domain.PlayerId;
 import main.player.domain.PlayerRepository;
+import main.player.domain.Username;
 import main.player.domain.exception.PlayerNotFoundException;
 
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class InMemoryPlayerRepository implements PlayerRepository {
@@ -19,15 +21,25 @@ public class InMemoryPlayerRepository implements PlayerRepository {
     @Override
     public void save(Player player) {
         PlayerPersistenceModel model = persistenceMapper.toPersistence(player);
-        players.put(model.id(), model);
+        players.put(model.username(), model);
     }
 
     @Override
-    public Player fetchById(PlayerId id) {
-        PlayerPersistenceModel model = players.get(id.value());
+    public Player fetchByUsername(Username username) {
+        PlayerPersistenceModel model = players.get(username.value());
         if (model == null) {
-            throw new PlayerNotFoundException(id);
+            throw new PlayerNotFoundException(username);
         }
         return persistenceMapper.toDomain(model);
+    }
+
+    @Override
+    public boolean isUsed(Email email, Username username) {
+        for (PlayerPersistenceModel player : players.values()) {
+            if (Objects.equals(player.email(), email.value()) || Objects.equals(player.username(), username.value())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

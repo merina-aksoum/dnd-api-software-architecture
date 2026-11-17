@@ -50,9 +50,9 @@ public class PlayerResource {
     @GET
     @Path("{id}")
     public Response getPlayer(
-            @HeaderParam("Id") @NotNull String id
+            @HeaderParam("username") @NotNull String username
     ) {
-        GetPlayerQuery query = new GetPlayerQuery(id);
+        GetPlayerQuery query = new GetPlayerQuery(username);
         PlayerOutput player = getPlayerUseCase.execute(query);
         return Response.ok(responseMapper.toResponse(player)).build();
     }
