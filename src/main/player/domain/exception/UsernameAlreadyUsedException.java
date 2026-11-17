@@ -5,7 +5,7 @@ import main.player.domain.Username;
 public class UsernameAlreadyUsedException extends PlayerException {
     public UsernameAlreadyUsedException(Username username) {
         super(
-                "Username " + username + " is already taken."
+                "Username " + username.value() + " is already taken."
         );
     }
 }
