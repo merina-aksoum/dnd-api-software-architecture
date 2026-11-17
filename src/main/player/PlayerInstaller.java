@@ -15,7 +15,7 @@ public class PlayerInstaller {
     private final PlayerRepository playerRepository;
 
     public PlayerInstaller() {
-        this.playerRepository = new InMemoryPlayerRepository(new PlayerPersistenceMapper());;
+        this.playerRepository = new InMemoryPlayerRepository(new PlayerPersistenceMapper());
     }
 
     public void install(ResourceConfig resourceConfig) {
