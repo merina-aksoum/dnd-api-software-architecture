@@ -18,6 +18,8 @@ public class GetLobbyUseCase {
         LobbyId lobbyId = new LobbyId(query.lobbyId());
 
         Lobby lobby = lobbyRepository.fetchById(lobbyId);
+        // playergateway -> retourne la liste de lobbyplayer
+
 
         return outputMapper.toOutput(lobby);
     }

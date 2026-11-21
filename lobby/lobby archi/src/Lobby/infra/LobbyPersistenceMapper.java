@@ -12,7 +12,7 @@ public class LobbyPersistenceMapper {
                 lobby.status().toString(),
                 lobby.hostId().value(),
                 lobby.players(),
-                lobby.capacity())
+                lobby.capacity());
     }
 
     public Lobby toDomain(LobbyPersistenceModel model) {
@@ -21,7 +21,7 @@ public class LobbyPersistenceMapper {
                 LobbyStatus.valueOf(model.state()),
                 new PlayerId(model.hostId()),
                 new Capacity(model.capacity()),
-                new List<LobbyPlayer>(model.players())
+                new List<PlayerId>(model.players())
         );
     }
 }
