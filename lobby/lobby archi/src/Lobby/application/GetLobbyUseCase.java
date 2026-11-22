@@ -3,6 +3,7 @@ package Lobby.application;
 import Lobby.domain.Lobby;
 import Lobby.domain.LobbyId;
 import Lobby.domain.LobbyRepository;
+import Lobby.infra.LobbyPersistenceModel;
 
 public class GetLobbyUseCase {
     private final LobbyRepository lobbyRepository;
@@ -17,7 +18,7 @@ public class GetLobbyUseCase {
     public LobbyOutput execute(GetLobbyQuery query) {
         LobbyId lobbyId = new LobbyId(query.lobbyId());
 
-        Lobby lobby = lobbyRepository.fetchById(lobbyId);
+        LobbyPersistenceModel lobbyModel = lobbyRepository.fetchById(lobbyId);
         // playergateway -> retourne la liste de lobbyplayer
 
 

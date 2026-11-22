@@ -22,9 +22,9 @@ public class InMemoryLobbyRepository implements LobbyRepository {
     }
 
     @Override
-    public Lobby fetchById(LobbyId lobbyId) {
+    public LobbyPersistenceModel fetchById(LobbyId lobbyId) {
         LobbyPersistenceModel lobby = lobbies.get(lobbyId.value());
-        return persistenceMapper.toDomain(lobby);
+        return lobby;
     }
 
     @Override
