@@ -13,18 +13,18 @@ public class InProcessPlayerGateway implements PlayerGateway {
     }
 
     @Override
-    public List<PlayerOverview> getPlayerOverviews(List<PlayerId> playerIds) {
-        List<Player> playersList = getPLayers.execute(new GetPlayersQuery(playerIds));
-        List<PlayerOverview> playerOverviews = toPlayerOverviews(playersList);
-        return playerOverviews;
+    public List<LobbyPlayer> getLobbyPlayers(List<PlayerId> playerIds) {
+        List<Player> playersList = getPlayers.execute(new GetPlayersQuery(playerIds));
+        List<LobbyPlayer> LobbyPlayers = toLobbyPlayers(playersList);
+        return LobbyPlayers;
     }
 
-    public List<PlayerOverview> toPlayerOverviews(List<Player> players) {
+    public List<LobbyPlayer> toLobbyPlayers(List<Player> players) {
 
-        List<PlayerOverview> playerOverviews = new List<PlayerOverview>();
+        List<LobbyPlayer> LobbyPlayers = new List<LobbyPlayer>();
         for (Player player : players) {
-            playerOverviews.add(new PlayerOverview(player.id(), player.pesudonym(), player.heroes()); //TODO: À CORRIGER AVEC LES BONS PARAMÈTRES
+            LobbyPlayers.add(new LobbyPlayer(player.id(), player.pesudonym(), player.heroes()); //TODO: À CORRIGER AVEC LES BONS PARAMÈTRES
         }
-        return playerOverviews;
+        return LobbyPlayers;
     }
 }

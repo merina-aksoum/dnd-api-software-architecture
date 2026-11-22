@@ -15,13 +15,13 @@ public class LobbyPersistenceMapper {
                 lobby.capacity());
     }
 
-    public Lobby toDomain(LobbyPersistenceModel model) {
+    public Lobby toDomain(LobbyPersistenceModel model, List<LobbyPlayer> players) {
         return new Lobby(
                 new LobbyId(model.lobbyId()),
                 LobbyStatus.valueOf(model.state()),
                 new PlayerId(model.hostId()),
                 new Capacity(model.capacity()),
-                new List<PlayerId>(model.players())
+                players
         );
     }
 }
