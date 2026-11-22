@@ -24,6 +24,21 @@ public class Lobby {
     public LobbyStatus status() {
         return status;
     }
+
+    public void join(LobbyPlayer player) {
+        Objects.requireNonNull(player);
+        if (status != LobbyStatus.WAITING) {
+            throw new LobbyNotOpenException(lobbyId);
+        }
+        if (player.contains(player)) {
+            throw new AlreadyInLobbyException(player);
+        }
+        if (player.size() >= capacity.value()) {
+            throw new LobbyFullException(lobbyId);
+        }
+        players.add(player);
+    }
+
     @Override
     public boolean equals(Object o) {
         return o instanceof Lobby lobby && lobbyId.equals(lobbyId);

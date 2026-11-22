@@ -2,9 +2,8 @@ package Lobby.domain;
 
 public enum LobbyStatus {
         WAITING("Waiting"),
-        STARTED("Started"),
         FINISH("Finished"),
-        INGAME("In Game"),;
+        INGAME("In Game");
 
         private final String status;
 

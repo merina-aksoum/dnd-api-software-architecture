@@ -1,17 +1,19 @@
+import java.net.URI;
 
-void main() {
-    /* Informations que je sais
-      * Inventaire :
-      * peut contenir des armes, des armures, des potions et d'autres objets later on
-      * Maximum capacity : 10 objects
-      * Need to own an object before using or equip
-      * Can't add more if the inventory is full
-      * Armes :
-      * longSword, Axe, Hammer, Knife, Arc, Stick
-      * Can used one weapon at a time, etc.
-      * All the info will be add once we et an idea
-      * Armor :
-      * No armor, Leather armor, Metallic old-fashioned armor lmao
-      */
+import Lobby.config.ApplicationContext;
+import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
+public class Main {
 
+    private static final String DEFAULT_PORT = "8080";
+
+    public static void main(String[] args) {
+        URI baseUri = URI.create("http://0.0.0.0:" + port() + "/");
+        GrizzlyHttpServerFactory.createHttpServer(baseUri, ApplicationContext.createResourceConfig());
+        System.out.printf("Restalo started at %s%n", baseUri);
+    }
+
+    private static String port() {
+        String port = System.getenv("PORT");
+        return port == null || port.isBlank() ? DEFAULT_PORT : port;
+    }
 }

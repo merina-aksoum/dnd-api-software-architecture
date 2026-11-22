@@ -10,14 +10,14 @@ public class LobbyPersistenceMapper {
         return new LobbyPersistenceModel(
                 lobby.lobbyId().value(),
                 lobby.capacity().value(),
-                lobby.status().value());
+                lobby.status().toString()); // Figure out the issue with ENUM, maybe try another way to get the status of the game.
     }
 
-    public Lobby toDomain(LobbyPersistenceModel lobbyPersistenceModel) {
+    public Lobby toDomain(LobbyPersistenceModel model) {
         return new Lobby(
                 new LobbyId(model.lobbyId()),
                 new Capacity(model.capacity()),
-                new LobbyStatus(model.status())
+                LobbyStatus.valueOf(model.status())
         );
     }
 }

@@ -7,7 +7,7 @@ public class LobbyOutputMapper {
         return new LobbyOutput(
                 lobby.lobbyId().value(),
                 lobby.capacity().value(),
-                lobby.status().value()
+                lobby.status().toString()
         );
     }
 }

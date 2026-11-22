@@ -1,0 +1,14 @@
+Au moment de l'utilisation de lobby, nous devons savoir :
+1. Son status (Is it done or not?)
+2. Qui sont les joueurs qui jouent dans ce lobby?
+3. Ceux qui rentrent et sortent
+4. Selection des heros
+5. Ses proprietes (to be fair, I was thinking abt the world, like forest, creatures...)
+6. Setting up rules (to be verified in the future)
+
+** Maybe show the name, the level and the type of hero they are playing?
+
+
+
+https://www.g2a.com/news/glossary/what-is-a-lobby-in-gaming/
+

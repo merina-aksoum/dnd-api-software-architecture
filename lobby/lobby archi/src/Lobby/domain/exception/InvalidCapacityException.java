@@ -1,9 +1,8 @@
 package Lobby.domain.exception;
 
-import Lobby.domain.Lobby;
-
 public class InvalidCapacityException extends LobbyException {
-    public InvalidCapacityException(int maximum){
+    public InvalidCapacityException() {
+        super("This lobby is full, please join another lobby or try again later.");
 
     }
 }

@@ -12,18 +12,18 @@ import jakarta.ws.rs.core.UriInfo;
 
 import java.net.URI;
 
-@Path("/lobby")
+@Path("/lobbies")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class LobbyResource {
     private final CreateLobbyUseCase createLobbyUseCase;
-    private final CreateLobbyRequest requestMapper;
+    private final CreateLobbyRequestMapper requestMapper;
     private final GetLobbyUseCase getLobbyUseCase;
     private final LobbyResponseMapper responseMapper;
 
     public LobbyResource(
             CreateLobbyUseCase createLobbyUseCase,
-            CreateLobbyRequest requestMapper,
+            CreateLobbyRequestMapper requestMapper,
             GetLobbyUseCase getLobbyUseCase,
             LobbyResponseMapper responseMapper) {
         this.createLobbyUseCase = createLobbyUseCase;
@@ -42,10 +42,11 @@ public class LobbyResource {
         URI location = uriInfo.getAbsolutePathBuilder().path(lobbyId).build();
         return Response.created(location).build();
     }
+
     @GET
-    @PATH("{lobbyId}")
+    @Path("{lobbyId}")
     public Response getLobby(
-            @HeaderParam("Lobby") @NotNull String lobbyId, @PathParam("id") String lobbyId) {
+            @HeaderParam("Lobby") @NotNull String lobbyId, @PathParam("id") String playerId) {
         GetLobbyQuery query = new GetLobbyQuery(lobbyId);
         LobbyOutput lobby = getLobbyUseCase.execute(query);
         return Response.ok(responseMapper.toResponse(lobby)).build();
