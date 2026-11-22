@@ -4,6 +4,8 @@ import Lobby.api.dto.GetLobbyResponse;
 import Lobby.application.LobbiesOutput;
 import Lobby.application.LobbyOutput;
 
+import java.util.List;
+
 public class LobbyResponseMapper {
     public GetLobbyResponse toResponse(LobbyOutput lobby) {
         return new GetLobbyResponse(
@@ -13,7 +15,4 @@ public class LobbyResponseMapper {
                 lobby.availableSeats());
     }
 
-    public GetLobbiesResponse toResponse(LobbiesOutput lobbies) {
-        return new GetLobbiesResponse(lobbies);
-    }
 }

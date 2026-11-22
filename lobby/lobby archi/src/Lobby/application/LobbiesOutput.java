@@ -6,6 +6,9 @@ import Lobby.domain.LobbyOverview;
 import java.util.List;
 
 public record LobbiesOutput(
-        List<LobbyOverview> lobbies
+        String id,
+        String hostId,
+        int playerCount,
+        int maxPlayers
 ) {
 }

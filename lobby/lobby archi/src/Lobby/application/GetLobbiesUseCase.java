@@ -2,6 +2,7 @@ package Lobby.application;
 
 import Lobby.domain.Lobby;
 import Lobby.domain.LobbyId;
+import Lobby.domain.LobbyOverview;
 import Lobby.domain.LobbyRepository;
 
 import java.util.List;
@@ -16,9 +17,8 @@ public class GetLobbiesUseCase {
         this.outputMapper = outputMapper;
     }
 
-    public LobbiesOutput execute() {
-
-        List<Lobby> lobbies = lobbyRepository.fetchLobbies();
+    public List<LobbiesOutput> execute() {
+        List<LobbyOverview> lobbies = lobbyRepository.fetchLobbies();
         return outputMapper.toOutput(lobbies);
     }
 }

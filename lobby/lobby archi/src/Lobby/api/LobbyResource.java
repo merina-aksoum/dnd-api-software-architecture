@@ -11,6 +11,7 @@ import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriInfo;
 
 import java.net.URI;
+import java.util.List;
 
 @Path("/lobby")
 @Consumes(MediaType.APPLICATION_JSON)
@@ -58,7 +59,7 @@ public class LobbyResource {
     @GET
     @Path("/lobbies")
     public Response getLobbies() {
-        LobbiesOutput lobbies = getLobbiesUseCase.execute();
-        return Response.ok(responseMapper.toResponse(lobbies)).build();
+        List<LobbiesOutput> lobbies = getLobbiesUseCase.execute();
+        return Response.ok(lobbies).build();
     }
 }
