@@ -34,10 +34,14 @@ public class InMemoryLobbyRepository implements LobbyRepository {
     @Override
     public List<LobbyOverview> fetchLobbies() {
         List<LobbyOverview> lobbyOverviews = new ArrayList<>();
-        Collection<LobbyPersistenceModel> lobbyPersistenceModels = lobbies.values();
-        for (LobbyPersistenceModel model : lobbyPersistenceModels) {
-            lobbyOverviews.add(new LobbyOverview(model.lobbyId(), model.hostId(),  model.capacity() - model.players().size() ,model.capacity()));
+        Collection<LobbyPersistenceModel> lobbyModels = lobbies.values();
+        for (LobbyPersistenceModel model : lobbyModels) {
+            if (LobbyStatus.valueOf(model.state()) == LobbyStatus.OPEN) {
+                LobbyOverview overview = persistenceMapper.toOverview(model);
+                lobbyOverviews.add(overview);
+            }
         }
         return lobbyOverviews;
     }
+
 }

@@ -1,10 +1,10 @@
 package Lobby.domain;
 
 public record LobbyOverview(
-        String id,
-        String hostId,
+        LobbyId id,
+        PlayerId hostId,
         int playerCount,
-        int maxPlayers
+        Capacity maxPlayers
 ) {
 }
 

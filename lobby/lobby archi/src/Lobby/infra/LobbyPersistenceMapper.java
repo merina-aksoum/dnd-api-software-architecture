@@ -1,9 +1,6 @@
 package Lobby.infra;
 
-import Lobby.domain.Capacity;
-import Lobby.domain.Lobby;
-import Lobby.domain.LobbyId;
-import Lobby.domain.LobbyStatus;
+import Lobby.domain.*;
 
 public class LobbyPersistenceMapper {
     public LobbyPersistenceModel toPersistence(Lobby lobby) {
@@ -22,6 +19,15 @@ public class LobbyPersistenceMapper {
                 new PlayerId(model.hostId()),
                 new Capacity(model.capacity()),
                 players
+        );
+    }
+
+    public LobbyOverview toOverview(LobbyPersistenceModel model) {
+        return new LobbyOverview(
+                new LobbyId(model.lobbyId()),
+                new PlayerId(model.hostId()),
+                model.capacity() - model.players().size(),
+                model.capacity()
         );
     }
 }
