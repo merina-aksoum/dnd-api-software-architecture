@@ -27,13 +27,13 @@ public class InMemoryLobbyRepository implements LobbyRepository {
     @Override
     public Lobby fetchById(LobbyId lobbyId) {
         LobbyPersistenceModel lobbyModel = lobbies.get(lobbyId.value());
-        List<LobbyPlayer> lobbyPlayers = playerGateway.getPlayerOverviews(lobbyModel.players());
+        List<LobbyPlayer> lobbyPlayers = playerGateway.getLobbyPlayers(lobbyModel.players());
         Lobby lobby = persistenceMapper.toDomain(lobbyModel, playerOverviews);
         return lobby;
     }
 
     @Override
-    public Map<String, LobbyPersistenceModel> fetchLobbies() {
+    public List<LobbyOverivew> fetchLobbies() {
         return lobbies;
     }
 }

@@ -19,7 +19,6 @@ public class GetLobbiesUseCase {
     public LobbiesOutput execute() {
 
         List<Lobby> lobbies = lobbyRepository.fetchLobbies();
-
         return outputMapper.toOutput(lobbies);
     }
 }

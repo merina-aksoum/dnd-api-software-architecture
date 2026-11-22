@@ -19,16 +19,19 @@ public class LobbyResource {
     private final CreateLobbyUseCase createLobbyUseCase;
     private final CreateLobbyRequestMapper requestMapper;
     private final GetLobbyUseCase getLobbyUseCase;
+    private final GetLobbiesUseCase getLobbiesUseCase;
     private final LobbyResponseMapper responseMapper;
 
     public LobbyResource(
             CreateLobbyUseCase createLobbyUseCase,
             CreateLobbyRequestMapper requestMapper,
             GetLobbyUseCase getLobbyUseCase,
+            GetLobbiesUseCase getLobbiesUseCase,
             LobbyResponseMapper responseMapper) {
         this.createLobbyUseCase = createLobbyUseCase;
         this.requestMapper = requestMapper;
         this.getLobbyUseCase = getLobbyUseCase;
+        this.getLobbiesUseCase = getLobbiesUseCase;
         this.responseMapper = responseMapper;
     }
 
@@ -54,9 +57,7 @@ public class LobbyResource {
 
     @GET
     @Path("/lobbies")
-    public Response getLobbies(
-            @HeaderParam("Lobbies")
-    ) {
+    public Response getLobbies() {
         LobbiesOutput lobbies = getLobbiesUseCase.execute();
         return Response.ok(responseMapper.toResponse(lobbies)).build();
     }
