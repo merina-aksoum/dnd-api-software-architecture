@@ -1,10 +1,9 @@
 package Lobby.infra;
 
-import Lobby.domain.Lobby;
-import Lobby.domain.LobbyId;
-import Lobby.domain.LobbyRepository;
-import Lobby.domain.PlayerGateway;
+import Lobby.domain.*;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -28,12 +27,17 @@ public class InMemoryLobbyRepository implements LobbyRepository {
     public Lobby fetchById(LobbyId lobbyId) {
         LobbyPersistenceModel lobbyModel = lobbies.get(lobbyId.value());
         List<LobbyPlayer> lobbyPlayers = playerGateway.getLobbyPlayers(lobbyModel.players());
-        Lobby lobby = persistenceMapper.toDomain(lobbyModel, playerOverviews);
+        Lobby lobby = persistenceMapper.toDomain(lobbyModel, lobbyPlayers);
         return lobby;
     }
 
     @Override
-    public List<LobbyOverivew> fetchLobbies() {
-        return lobbies;
+    public List<LobbyOverview> fetchLobbies() {
+        List<LobbyOverview> lobbyOverviews = new ArrayList<>();
+        Collection<LobbyPersistenceModel> lobbyPersistenceModels = lobbies.values();
+        for (LobbyPersistenceModel model : lobbyPersistenceModels) {
+            lobbyOverviews.add(new LobbyOverview(model.lobbyId(), model.hostId(),  model.capacity() - model.players().size() ,model.capacity()));
+        }
+        return lobbyOverviews;
     }
 }

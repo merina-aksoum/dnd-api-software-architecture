@@ -2,6 +2,7 @@ package Lobby.infra;
 
 import Lobby.domain.PlayerGateway;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class InProcessPlayerGateway implements PlayerGateway {
@@ -21,7 +22,7 @@ public class InProcessPlayerGateway implements PlayerGateway {
 
     public List<LobbyPlayer> toLobbyPlayers(List<Player> players) {
 
-        List<LobbyPlayer> LobbyPlayers = new List<LobbyPlayer>();
+        List<LobbyPlayer> LobbyPlayers = new ArrayList<>();
         for (Player player : players) {
             LobbyPlayers.add(new LobbyPlayer(player.id(), player.pesudonym(), player.heroes()); //TODO: À CORRIGER AVEC LES BONS PARAMÈTRES
         }
