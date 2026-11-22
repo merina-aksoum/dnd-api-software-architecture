@@ -1,8 +1,10 @@
 package Lobby.api.dto;
 
+import java.util.List;
+
 public record GetLobbyResponse(
         String lobbyId,
         String state,
-        List<PlayerRepresentation> players,
+        List<LobbyPlayer> players,
         int availableSeats) {
 }

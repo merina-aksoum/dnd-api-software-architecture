@@ -7,7 +7,7 @@ import java.util.Map;
 public interface LobbyRepository {
     void save(Lobby lobby);
 
-    LobbyPersistenceModel fetchById(LobbyId lobbyId);
+    Lobby fetchById(LobbyId lobbyId);
 
     Map<String, LobbyPersistenceModel> fetchLobbies();
 }

@@ -1,6 +1,7 @@
 package Lobby.application;
 
 import Lobby.domain.Lobby;
+import java.util.List;
 
 public class LobbyOutputMapper {
     public LobbyOutput toOutput(Lobby lobby) {
@@ -8,7 +9,7 @@ public class LobbyOutputMapper {
                 lobby.lobbyId().value(),
                 lobby.status().toString(),
                 lobby.players(),
-                lobby.capacity().value()
+                lobby.capacity().value() - lobby.playerCount()
         );
     }
 }
