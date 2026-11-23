@@ -1,4 +1,4 @@
-package Lobby.api;
+package main.lobby.api;
 
 import Lobby.api.dto.CreateLobbyRequest;
 import Lobby.application.*;

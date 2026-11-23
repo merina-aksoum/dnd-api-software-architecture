@@ -1,4 +1,4 @@
-package Lobby.api;
+package main.lobby.api;
 
 import Lobby.domain.exception.LobbyException;
 import jakarta.ws.rs.core.MediaType;

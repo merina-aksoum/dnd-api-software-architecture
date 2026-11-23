@@ -1,4 +1,4 @@
-package Lobby.domain.exception;
+package main.lobby.domain.exception;
 
 public abstract class LobbyException extends RuntimeException {
 

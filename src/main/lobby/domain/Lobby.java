@@ -1,4 +1,4 @@
-package Lobby.domain;
+package main.lobby.domain;
 
 import java.util.Objects;
 import java.util.List;

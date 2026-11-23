@@ -1,4 +1,4 @@
-package Lobby.application;
+package main.lobby.application;
 
 public record LeaveLobbyCommand(
         String lobbyId,

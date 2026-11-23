@@ -1,4 +1,4 @@
-package Lobby.domain;
+package main.lobby.domain;
 
 public record Capacity(int value)
 {

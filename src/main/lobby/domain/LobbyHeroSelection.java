@@ -1,4 +1,4 @@
-package Lobby.domain;
+package main.lobby.domain;
 
 public class LobbyHeroSelection {
     // Cette section sera utilisé pour la sélection d'un héro (de son type)

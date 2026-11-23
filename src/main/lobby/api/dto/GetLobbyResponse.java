@@ -1,4 +1,4 @@
-package Lobby.api.dto;
+package main.lobby.api.dto;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package Lobby.application;
+package main.lobby.application;
 
 import java.util.List;
 

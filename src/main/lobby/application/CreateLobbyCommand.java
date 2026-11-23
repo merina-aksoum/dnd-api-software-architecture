@@ -1,4 +1,4 @@
-package Lobby.application;
+package main.lobby.application;
 
 public record CreateLobbyCommand(
         String lobbyId,

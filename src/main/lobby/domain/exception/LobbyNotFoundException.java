@@ -1,4 +1,4 @@
-package Lobby.domain.exception;
+package main.lobby.domain.exception;
 
 import Lobby.domain.Lobby;
 import Lobby.domain.LobbyId;

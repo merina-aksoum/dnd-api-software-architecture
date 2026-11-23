@@ -1,4 +1,4 @@
-package Lobby.api.dto;
+package main.lobby.api.dto;
 
 import Lobby.application.CreateLobbyCommand;
 import jakarta.validation.Valid;

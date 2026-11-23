@@ -1,4 +1,4 @@
-package Lobby.infra;
+package main.lobby.infra;
 
 import java.util.List;
 

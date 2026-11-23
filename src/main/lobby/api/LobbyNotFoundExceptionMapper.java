@@ -1,4 +1,4 @@
-package Lobby.api;
+package main.lobby.api;
 
 import Lobby.domain.Lobby;
 import Lobby.domain.exception.LobbyNotFoundException;
