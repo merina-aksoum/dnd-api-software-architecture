@@ -1,4 +1,4 @@
-package main.player.config;
+package main.config;
 
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
