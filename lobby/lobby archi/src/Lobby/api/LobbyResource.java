@@ -18,11 +18,12 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 public class LobbyResource {
 
-    private final CreateLobbyUseCase createLobbyUseCase;
     private final CreateLobbyRequestMapper createLobbyRequestMapper;
+    private final CreateLobbyUseCase createLobbyUseCase;
     private final GetLobbyUseCase getLobbyUseCase;
     private final GetLobbiesUseCase getLobbiesUseCase;
     private final JoinLobbyUseCase joinLobbyUseCase;
+    private final LeaveLobbyUseCase leaveLobbyUseCase;
     private final LobbyResponseMapper responseMapper;
 
     public LobbyResource(
@@ -31,12 +32,14 @@ public class LobbyResource {
             GetLobbyUseCase getLobbyUseCase,
             GetLobbiesUseCase getLobbiesUseCase,
             JoinLobbyUseCase joinLobbyUseCase,
+            LeaveLobbyUseCase leaveLobbyUseCase,
             LobbyResponseMapper responseMapper) {
         this.createLobbyUseCase = createLobbyUseCase;
         this.createLobbyRequestMapper = createLobbyRequestMapper;
         this.getLobbyUseCase = getLobbyUseCase;
         this.getLobbiesUseCase = getLobbiesUseCase;
         this.joinLobbyUseCase = joinLobbyUseCase;
+        this.leaveLobbyUseCase = leaveLobbyUseCase;
         this.responseMapper = responseMapper;
     }
 
@@ -77,5 +80,17 @@ public class LobbyResource {
         LobbyOutput lobby = joinLobbyUseCase.execute(command);
         URI location = uriInfo.getAbsolutePathBuilder().path(playerId).build();
         return Response.created(location).entity(responseMapper.toResponse(lobby)).build();
+    }
+
+    @DELETE
+    @Path("/{lobbyId}/players/{playerId}")
+    public Response leaveLobby(
+            @HeaderParam("Player") @NotNull String connectedPlayerId,
+            @PathParam("lobbyId") @NotNull String lobbyId,
+            @PathParam("playerId") @NotNull String playerId
+    ) {
+        LeaveLobbyCommand command = new LeaveLobbyCommand(lobbyId, playerId);
+        leaveLobbyUseCase.execute(command);
+        return Response.noContent().build();
     }
 }
