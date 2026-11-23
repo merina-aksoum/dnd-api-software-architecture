@@ -4,6 +4,7 @@ package main.lobby.application;
 import main.lobby.domain.Lobby;
 import main.lobby.domain.LobbyFactory;
 import main.lobby.domain.LobbyRepository;
+import main.lobby.domain.PlayerGateway;
 
 public class CreateLobbyUseCase {
     private final LobbyRepository lobbyRepository;
