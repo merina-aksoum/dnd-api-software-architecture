@@ -43,6 +43,10 @@ public class Lobby {
     public int hashCode() {
         return lobbyId.hashCode();
     }
+
+    public void join(PlayerId playerId) {
+
+    }
 }
 
 

@@ -2,5 +2,6 @@ package Lobby.domain;
 import java.util.List;
 
 public interface PlayerGateway {
-    List<PlayerOverview> getLobbyPlayers(List<PlayerId> playerIds);
+    List<LobbyPlayer> getLobbyPlayers(List<PlayerId> playerIds);
+    LobbyPlayer getLobbyPlayer(PlayerId playerId);
 }

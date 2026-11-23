@@ -8,6 +8,7 @@ import java.util.List;
 public class InProcessPlayerGateway implements PlayerGateway {
 
     private final GetPlayersUseCase getPlayers;
+    private final GetPlayerUseCase getPlayer;
 
     public InProcessPlayerGateway(GetPlayersUseCase getPlayers) {
         this.getPlayers = getPlayers;
@@ -27,5 +28,16 @@ public class InProcessPlayerGateway implements PlayerGateway {
             LobbyPlayers.add(new LobbyPlayer(player.id(), player.pesudonym(), player.heroes()); //TODO: À CORRIGER AVEC LES BONS PARAMÈTRES
         }
         return LobbyPlayers;
+    }
+
+    public LobbyPlayer getLobbyPlayer(PlayerId playerId) {
+        Player player = getPlayer.execute(new GetPlayerQuery(playerId));
+        LobbyPlayer lobbyPlayer = toLobbyPlayer(player);
+        return lobbyPlayer;
+    }
+
+    public LobbyPlayer toLobbyPlayer(Player player) {
+        LobbyPlayer lobbyPlayer = new LobbyPlayer(player.id(), player.pseudonym(), player.heroes());
+        return lobbyPlayer;
     }
 }
