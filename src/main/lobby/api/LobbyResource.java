@@ -65,7 +65,6 @@ public class LobbyResource {
     }
 
     @GET
-    @Path("")
     public Response getLobbies() {
         List<LobbiesOutput> lobbies = getLobbiesUseCase.execute();
         return Response.ok(lobbies).build();

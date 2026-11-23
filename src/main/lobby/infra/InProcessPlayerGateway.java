@@ -1,7 +1,9 @@
 package main.lobby.infra;
 
 
+import main.lobby.domain.LobbyPlayer;
 import main.lobby.domain.PlayerGateway;
+import main.player.application.GetPlayerQuery;
 import main.player.application.GetPlayerUseCase;
 import main.player.domain.Player;
 import main.player.domain.PlayerId;
@@ -14,8 +16,9 @@ public class InProcessPlayerGateway implements PlayerGateway {
     private final GetPlayersUseCase getPlayers;
     private final GetPlayerUseCase getPlayer;
 
-    public InProcessPlayerGateway(GetPlayersUseCase getPlayers) {
+    public InProcessPlayerGateway(GetPlayersUseCase getPlayers, GetPlayerUseCase getPlayer) {
         this.getPlayers = getPlayers;
+        this.getPlayer = getPlayer;
     }
 
     @Override
@@ -29,7 +32,7 @@ public class InProcessPlayerGateway implements PlayerGateway {
 
         List<LobbyPlayer> LobbyPlayers = new ArrayList<>();
         for (Player player : players) {
-            LobbyPlayers.add(new LobbyPlayer(player.id(), player.pesudonym(), player.heroes()); //TODO: À CORRIGER AVEC LES BONS PARAMÈTRES
+            LobbyPlayers.add(new LobbyPlayer(player.id().value(), player.username().value(), player.heroes()); //TODO: À CORRIGER AVEC LES BONS PARAMÈTRES
         }
         return LobbyPlayers;
     }
@@ -41,7 +44,7 @@ public class InProcessPlayerGateway implements PlayerGateway {
     }
 
     public LobbyPlayer toLobbyPlayer(Player player) {
-        LobbyPlayer lobbyPlayer = new LobbyPlayer(player.id(), player.pseudonym(), player.heroes());
+        LobbyPlayer lobbyPlayer = new LobbyPlayer(player.id().value(), player.username().value(), player.heroes()); //TODO: COMPLETE WITH HERO REPRESENTATION
         return lobbyPlayer;
     }
 }

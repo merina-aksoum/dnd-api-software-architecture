@@ -46,7 +46,7 @@ public class Lobby {
 
     public void leave(PlayerId playerId) { //complete with actual lobbyplayer representation
         for (LobbyPlayer player : players) {
-            if (player.id() == playerId) {
+            if (player.id().equals(playerId.value())) {
                 players.remove(player);
             }
         }
