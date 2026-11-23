@@ -1,8 +1,9 @@
 package main.lobby.application;
 
-import Lobby.domain.Lobby;
-import Lobby.domain.LobbyFactory;
-import Lobby.domain.LobbyRepository;
+
+import main.lobby.domain.Lobby;
+import main.lobby.domain.LobbyFactory;
+import main.lobby.domain.LobbyRepository;
 
 public class CreateLobbyUseCase {
     private final LobbyRepository lobbyRepository;

@@ -1,11 +1,10 @@
 package main.lobby.api;
 
-import Lobby.domain.Lobby;
-import Lobby.domain.exception.LobbyNotFoundException;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.Provider;
+import main.lobby.domain.exception.LobbyNotFoundException;
 
 @Provider
 public class LobbyNotFoundExceptionMapper implements ExceptionMapper<LobbyNotFoundException> {

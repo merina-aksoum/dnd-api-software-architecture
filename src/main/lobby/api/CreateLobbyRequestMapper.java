@@ -1,7 +1,8 @@
 package main.lobby.api;
 
-import Lobby.api.dto.CreateLobbyRequest;
-import Lobby.application.CreateLobbyCommand;
+
+import main.lobby.api.dto.CreateLobbyRequest;
+import main.lobby.application.CreateLobbyCommand;
 
 public class CreateLobbyRequestMapper {
 

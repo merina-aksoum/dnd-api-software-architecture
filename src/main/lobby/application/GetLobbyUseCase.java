@@ -1,12 +1,8 @@
 package main.lobby.application;
 
-import java.util.List;
-
-import Lobby.domain.Lobby;
-import Lobby.domain.LobbyId;
-import Lobby.domain.LobbyRepository;
-import Lobby.domain.PlayerGateway;
-import Lobby.infra.LobbyPersistenceModel;
+import main.lobby.domain.Lobby;
+import main.lobby.domain.LobbyId;
+import main.lobby.domain.LobbyRepository;
 
 public class GetLobbyUseCase {
     private final LobbyRepository lobbyRepository;

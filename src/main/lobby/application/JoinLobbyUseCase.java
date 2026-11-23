@@ -1,9 +1,11 @@
 package main.lobby.application;
 
-import Lobby.domain.Lobby;
-import Lobby.domain.LobbyId;
-import Lobby.domain.LobbyRepository;
-import Lobby.domain.PlayerGateway;
+
+import main.lobby.domain.Lobby;
+import main.lobby.domain.LobbyId;
+import main.lobby.domain.LobbyRepository;
+import main.lobby.domain.PlayerGateway;
+import main.player.domain.PlayerId;
 
 public class JoinLobbyUseCase {
     private final LobbyRepository repository;

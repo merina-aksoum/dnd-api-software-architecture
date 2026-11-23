@@ -1,6 +1,10 @@
 package main.lobby.infra;
 
-import Lobby.domain.PlayerGateway;
+
+import main.lobby.domain.PlayerGateway;
+import main.player.application.GetPlayerUseCase;
+import main.player.domain.Player;
+import main.player.domain.PlayerId;
 
 import java.util.ArrayList;
 import java.util.List;

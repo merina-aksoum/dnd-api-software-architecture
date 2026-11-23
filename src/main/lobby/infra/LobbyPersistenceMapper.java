@@ -1,6 +1,8 @@
 package main.lobby.infra;
 
-import Lobby.domain.*;
+
+import main.lobby.domain.Lobby;
+import main.lobby.domain.Lobby.*;
 
 public class LobbyPersistenceMapper {
     public LobbyPersistenceModel toPersistence(Lobby lobby) {

@@ -1,6 +1,8 @@
 package main.lobby.api;
 
 
+import main.lobby.api.dto.GetLobbyResponse;
+import main.lobby.application.LobbyOutput;
 
 public class LobbyResponseMapper {
     public GetLobbyResponse toResponse(LobbyOutput lobby) {

@@ -1,5 +1,7 @@
 package main.lobby.domain;
 
+import main.player.domain.PlayerId;
+
 import java.util.Objects;
 import java.util.List;
 

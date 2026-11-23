@@ -1,6 +1,6 @@
 package main.lobby.application;
 
-import Lobby.domain.LobbyOverview;
+import main.lobby.domain.LobbyOverview;
 
 import java.util.ArrayList;
 import java.util.List;

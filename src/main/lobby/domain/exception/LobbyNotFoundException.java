@@ -1,7 +1,7 @@
 package main.lobby.domain.exception;
 
-import Lobby.domain.Lobby;
-import Lobby.domain.LobbyId;
+
+import main.lobby.domain.LobbyId;
 
 public class LobbyNotFoundException extends LobbyException {
     public LobbyNotFoundException(LobbyId lobbyId) {

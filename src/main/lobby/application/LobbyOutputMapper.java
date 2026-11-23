@@ -1,6 +1,7 @@
 package main.lobby.application;
 
-import Lobby.domain.Lobby;
+import main.lobby.domain.Lobby;
+
 import java.util.List;
 
 public class LobbyOutputMapper {

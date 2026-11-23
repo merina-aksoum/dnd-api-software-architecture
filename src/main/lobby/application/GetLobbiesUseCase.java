@@ -1,9 +1,7 @@
 package main.lobby.application;
 
-import Lobby.domain.Lobby;
-import Lobby.domain.LobbyId;
-import Lobby.domain.LobbyOverview;
-import Lobby.domain.LobbyRepository;
+import main.lobby.domain.LobbyOverview;
+import main.lobby.domain.LobbyRepository;
 
 import java.util.List;
 
@@ -12,7 +10,7 @@ public class GetLobbiesUseCase {
     private final LobbiesOutputMapper outputMapper;
 
     public GetLobbiesUseCase(LobbyRepository lobbyRepository,
-                           LobbiesOutputMapper outputMapper) {
+                             LobbiesOutputMapper outputMapper) {
         this.lobbyRepository = lobbyRepository;
         this.outputMapper = outputMapper;
     }

@@ -1,7 +1,6 @@
 package main.lobby.api;
 
-import Lobby.api.dto.CreateLobbyRequest;
-import Lobby.application.*;
+
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.ws.rs.*;
@@ -9,6 +8,8 @@ import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriInfo;
+import main.lobby.api.dto.CreateLobbyRequest;
+import main.lobby.application.*;
 
 import java.net.URI;
 import java.util.List;
@@ -89,7 +90,7 @@ public class LobbyResource {
             @PathParam("lobbyId") @NotNull String lobbyId,
             @PathParam("playerId") @NotNull String playerId
     ) {
-        LeaveLobbyCommand command = new LeaveLobbyCommand(lobbyId, playerId);
+        LeaveLobbyCommand command = new LeaveLobbyCommand(lobbyId, playerId, connectedPlayerId);
         leaveLobbyUseCase.execute(command);
         return Response.noContent().build();
     }
