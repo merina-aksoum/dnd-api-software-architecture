@@ -23,18 +23,12 @@ public class Lobby {
         this.players = players;
     }
 
-    public LobbyId lobbyId() {
-        return lobbyId;
-    }
-    public Capacity capacity() {
-        return capacity;
-    }
-    public LobbyStatus status() {
-        return status;
-    }
-    public List<LobbyPlayer> players() { return players;}
+    public LobbyId lobbyId() { return lobbyId; }
+    public LobbyStatus status() { return status; }
+    public PlayerId hostId() { return hostId;}
+    public Capacity capacity() { return capacity; }
+    public List<LobbyPlayer> players() { return players; }
     public int playerCount() { return players.size();}
-    public PlayerId hostId() {return hostId;}
     @Override
     public boolean equals(Object o) {
         return o instanceof Lobby lobby && lobbyId.equals(lobbyId);
@@ -46,6 +40,14 @@ public class Lobby {
 
     public void join(LobbyPlayer player) {
         players.add(player);
+    }
+
+    public void leave(PlayerId playerId) { //complete with actual lobbyplayer representation
+        for (LobbyPlayer player : players) {
+            if (player.id() == playerId) {
+                players.remove(player);
+            }
+        }
     }
 }
 
