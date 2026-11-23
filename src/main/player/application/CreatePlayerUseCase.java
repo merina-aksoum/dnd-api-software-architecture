@@ -4,6 +4,8 @@ import main.player.domain.PlayerFactory;
 import main.player.domain.PlayerId;
 import main.player.domain.PlayerRepository;
 import main.player.domain.Player;
+import main.player.domain.exception.EmailAlreadyTakenException;
+import main.player.domain.exception.UsernameAlreadyTakenException;
 
 public class CreatePlayerUseCase {
     private final PlayerFactory playerFactory;
@@ -20,6 +22,17 @@ public class CreatePlayerUseCase {
     }
 
     public PlayerOutput execute(CreatePlayerCommand command) {
+        String username = command.username();
+        String email = command.email();
+
+        if (playerRepository.isUsernameTaken(username)) {
+            throw new UsernameAlreadyTakenException();
+        }
+
+        if (playerRepository.isEmailTaken(email)) {
+            throw new EmailAlreadyTakenException();
+        }
+
         Player player = playerFactory.create(
                 command.username(),
                 command.password(),

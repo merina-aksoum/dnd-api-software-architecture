@@ -1,6 +1,6 @@
 package main.player.domain.exception;
 
-public class InvalidUsernameException extends PlayerException {
+public class InvalidUsernameException extends InvalidRequestException {
     public InvalidUsernameException() {
         super("""
                 Username format is invalid:

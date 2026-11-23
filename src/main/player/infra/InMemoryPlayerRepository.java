@@ -5,6 +5,7 @@ import main.player.domain.PlayerId;
 import main.player.domain.PlayerRepository;
 import main.player.domain.exception.PlayerNotFoundException;
 
+import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -29,5 +30,27 @@ public class InMemoryPlayerRepository implements PlayerRepository {
             throw new PlayerNotFoundException(id);
         }
         return persistenceMapper.toDomain(model);
+    }
+
+    @Override
+    public boolean isUsernameTaken(String username) {
+        Collection<PlayerPersistenceModel> playerModels = players.values();
+        for (PlayerPersistenceModel model : playerModels) {
+            if (model.username().equalsIgnoreCase(username)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean isEmailTaken(String email) {
+        Collection<PlayerPersistenceModel> playerModels = players.values();
+        for (PlayerPersistenceModel model : playerModels) {
+            if (model.email().equalsIgnoreCase(email)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
