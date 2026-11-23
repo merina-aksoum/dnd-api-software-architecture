@@ -1,5 +1,10 @@
 package Lobby.domain;
 
+import Lobby.domain.exception.AlreadyInLobbyException;
+import Lobby.domain.exception.LobbyFullException;
+import Lobby.domain.exception.LobbyNotOpenException;
+
+import java.util.List;
 import java.util.Objects;
 
 public class Lobby {
@@ -34,9 +39,25 @@ public class Lobby {
             throw new AlreadyInLobbyException(player);
         }
         if (player.size() >= capacity.value()) {
-            throw new LobbyFullException(lobbyId);
+            throw new LobbyFullException();
         }
         players.add(player);
+    }
+
+    public List<LobbyPlayer> players() {
+        return List.copyOf(players);
+    }
+
+    public String playerHost() {
+        return players.get(0).id();
+    }
+
+    public boolean isEveryoneReady() {
+        return !players().isEmpty() && players.stream().allMatch(LobbyPlayer::isReady);
+    }
+
+    public int availableSeats() {
+        return capacity.availableSeats(players().size());
     }
 
     @Override

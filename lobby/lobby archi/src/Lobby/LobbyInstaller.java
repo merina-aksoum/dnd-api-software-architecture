@@ -19,6 +19,8 @@ public class LobbyInstaller {
 
         public void install(ResourceConfig resourceConfig) {
             LobbyOutputMapper outputMapper = new LobbyOutputMapper();
+            LobbyFactory lobbyFactory = new LobbyFactory();
+
             CreateLobbyUseCase createRestaurantUseCase =
                     new CreateLobbyUseCase(
                             lobbyRepository, new LobbyFactory(), outputMapper);

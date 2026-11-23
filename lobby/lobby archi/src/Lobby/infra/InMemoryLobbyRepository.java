@@ -6,6 +6,7 @@ import Lobby.domain.LobbyRepository;
 import Lobby.domain.exception.LobbyNotFoundException;
 
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class InMemoryLobbyRepository implements LobbyRepository {
@@ -15,6 +16,7 @@ public class InMemoryLobbyRepository implements LobbyRepository {
     public InMemoryLobbyRepository(LobbyPersistenceMapper persistenceMapper) {
         this.persistenceMapper = persistenceMapper;
     }
+
 
     @Override
     public void save(Lobby lobby) {
@@ -29,5 +31,15 @@ public class InMemoryLobbyRepository implements LobbyRepository {
             throw new LobbyNotFoundException(lobbyId);
         }
         return persistenceMapper.toDomain(model);
+    }
+
+    @Override
+    public Optional<Lobby> findById(LobbyId lobbyId) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<Lobby> findByName(String name) {
+        return Optional.empty();
     }
 }
