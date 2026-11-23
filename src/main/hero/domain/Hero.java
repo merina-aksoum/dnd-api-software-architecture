@@ -1,0 +1,137 @@
+package main.hero.domain;
+
+import main.hero.domain.classes.ClassTypes;
+import main.hero.domain.experience.ExperiencePoints;
+import main.hero.domain.health.HealthPoints;
+import main.hero.domain.level.Level;
+import main.hero.domain.magic.MagicPoints;
+import main.hero.domain.name.Name;
+
+import main.hero.domain.abilities.Ability;
+import main.hero.domain.races.RaceTypes;
+
+import java.util.UUID;
+
+public class Hero {
+
+        private UUID id;
+
+        private Level level;
+        private ExperiencePoints xp;
+        private HealthPoints hp;
+        private MagicPoints mp;
+
+        private Name name;
+
+        private Ability strength;
+        private Ability dexterity;
+        private Ability constitution;
+        private Ability intelligence;
+        private Ability wisdom;
+        private Ability charisma;
+
+        private RaceTypes race;
+        private ClassTypes heroClass;
+
+        public Hero(
+                    UUID id,
+                    Level level,
+                    ExperiencePoints xp,
+                    HealthPoints hp,
+                    MagicPoints mp,
+                    Name name,
+                    Ability strength,
+                    Ability dexterity,
+                    Ability constitution,
+                    Ability intelligence,
+                    Ability wisdom,
+                    Ability charisma,
+                    RaceTypes race,
+                    ClassTypes heroClass) {
+            this.id = id;
+            this.level = level;
+            this.xp = xp;
+            this.hp = hp;
+            this.mp = mp;
+            this.name = name;
+            this.strength = strength;
+            this.dexterity = dexterity;
+            this.constitution = constitution;
+            this.intelligence = intelligence;
+            this.wisdom = wisdom;
+            this.charisma = charisma;
+            this.race = race;
+            this.heroClass = heroClass;
+        }
+
+    public String id() {
+        return id.toString();
+    }
+
+    public int level() {
+        return level.value();
+    }
+
+    public int xp() {
+        return xp.getCurrentXP();
+    }
+
+    public int xpMax() { return xp.getMaximumXP();}
+
+    public int hp() {
+        return hp.getCurrentHP();
+    }
+
+    public int hpMax() { return hp.getMaximumHP();}
+
+    public int mp() {
+        return mp.getCurrentMP();
+    }
+
+    public int mpMax() { return mp.getMaximumMP();}
+
+    public String name() {
+        return name.toString();
+    }
+
+    public int strength() {
+        return strength.getScore();
+    }
+
+    public int strengthModifier() { return strength.getModifier(); }
+
+    public int dexterity() { return dexterity.getScore();}
+
+    public int dexterityModifier() { return dexterity.getModifier(); }
+
+    public int constitution() {
+        return constitution.getScore();
+    }
+
+    public int constitutionModifier() { return constitution.getModifier(); }
+
+    public int intelligence() {
+        return intelligence.getScore();
+    }
+
+    public int intelligenceModifier() { return intelligence.getModifier(); }
+
+    public int charisma() {
+        return charisma.getScore();
+    }
+
+    public int charismaModifier() { return charisma.getModifier(); }
+
+    public int wisdom() {
+        return wisdom.getScore();
+    }
+
+    public int wisdomModifier() { return wisdom.getModifier(); }
+
+    public String raceValue() {
+        return race.toString();
+    }
+
+    public String heroClassValue() {return heroClass.toString();}
+
+}
