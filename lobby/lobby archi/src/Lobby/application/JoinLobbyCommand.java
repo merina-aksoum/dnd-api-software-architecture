@@ -1,4 +1,7 @@
 package Lobby.application;
 
-public class JoinLobbyCommand {
+public record JoinLobbyCommand(
+        String lobbyId,
+        String playerId
+) {
 }
