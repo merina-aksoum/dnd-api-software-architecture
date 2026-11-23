@@ -5,10 +5,10 @@ import main.player.domain.*;
 public class PlayerPersistenceMapper {
     public PlayerPersistenceModel toPersistence(Player player) {
         return new PlayerPersistenceModel(
-                player.getId().value(),
-                player.getUsername().value(),
-                player.getPassword().value(),
-                player.getEmail().value()
+                player.id().value(),
+                player.username().value(),
+                player.password().value(),
+                player.email().value()
         );
     }
 

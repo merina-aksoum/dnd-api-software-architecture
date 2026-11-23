@@ -1,5 +1,6 @@
 package main.player.domain;
 
+import main.player.domain.exception.EmptyFieldException;
 import main.player.domain.exception.InvalidEmailException;
 
 import java.util.regex.Matcher;
@@ -14,7 +15,11 @@ public record Email(String value) {
             isFound = matcher.find();
         }
 
-        if (!isFound || value.isBlank()) {
+        if (value == null || value.isBlank()) {
+            throw new EmptyFieldException("email");
+        }
+
+        if (!isFound) {
             throw new InvalidEmailException(value);
         }
     }

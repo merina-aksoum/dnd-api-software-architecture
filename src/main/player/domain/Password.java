@@ -1,22 +1,21 @@
 package main.player.domain;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.Objects;
 
-import main.player.domain.exception.InvalidPasswordException;
+import main.player.domain.exception.EmptyFieldException;
+import main.player.domain.exception.PasswordTooShortException;
 
 public record Password(String value) {
     public Password {
-        boolean isValid = false;
-        if (value != null) {
-            String regexCheck = "^.{8,}$";
-            Pattern pattern = Pattern.compile(regexCheck);
-            Matcher matcher = pattern.matcher(value);
-            isValid = matcher.find();
+
+        Objects.requireNonNull(value, "Password must not be null");
+
+        if (value == null || value.isBlank()) {
+            throw new EmptyFieldException("password");
         }
 
-        if (!isValid || value.isBlank()) {
-            throw new InvalidPasswordException();
+        if (value.length() < 8) {
+            throw new PasswordTooShortException();
         }
     }
 }

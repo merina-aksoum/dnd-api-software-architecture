@@ -3,6 +3,7 @@ package main.player.domain;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import main.player.domain.exception.EmptyFieldException;
 import main.player.domain.exception.InvalidUsernameException;
 
 public record Username(String value) {
@@ -14,7 +15,11 @@ public record Username(String value) {
             isValid = matcher.find();
         }
 
-        if (!isValid || value.isBlank()) {
+        if (value == null || value.isBlank()) {
+            throw new EmptyFieldException("username");
+        }
+
+        if (!isValid) {
             throw new InvalidUsernameException();
         }
     }
