@@ -13,26 +13,30 @@ import jakarta.ws.rs.core.UriInfo;
 import java.net.URI;
 import java.util.List;
 
-@Path("/lobby")
+@Path("/lobbies")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class LobbyResource {
+
     private final CreateLobbyUseCase createLobbyUseCase;
-    private final CreateLobbyRequestMapper requestMapper;
+    private final CreateLobbyRequestMapper createLobbyRequestMapper;
     private final GetLobbyUseCase getLobbyUseCase;
     private final GetLobbiesUseCase getLobbiesUseCase;
+    private final JoinLobbyUseCase joinLobbyUseCase;
     private final LobbyResponseMapper responseMapper;
 
     public LobbyResource(
             CreateLobbyUseCase createLobbyUseCase,
-            CreateLobbyRequestMapper requestMapper,
+            CreateLobbyRequestMapper createLobbyRequestMapper,
             GetLobbyUseCase getLobbyUseCase,
             GetLobbiesUseCase getLobbiesUseCase,
+            JoinLobbyUseCase joinLobbyUseCase,
             LobbyResponseMapper responseMapper) {
         this.createLobbyUseCase = createLobbyUseCase;
-        this.requestMapper = requestMapper;
+        this.createLobbyRequestMapper = createLobbyRequestMapper;
         this.getLobbyUseCase = getLobbyUseCase;
         this.getLobbiesUseCase = getLobbiesUseCase;
+        this.joinLobbyUseCase = joinLobbyUseCase;
         this.responseMapper = responseMapper;
     }
 
@@ -41,25 +45,37 @@ public class LobbyResource {
             @HeaderParam("Lobby") @NotNull String lobbyId,
             @NotNull @Valid CreateLobbyRequest request,
             @Context UriInfo uriInfo) {
-        CreateLobbyCommand command = requestMapper.toCommand(lobbyId, request);
+        CreateLobbyCommand command = createLobbyRequestMapper.toCommand(lobbyId, request);
         LobbyOutput lobby = createLobbyUseCase.execute(command);
         URI location = uriInfo.getAbsolutePathBuilder().path(lobbyId).build();
         return Response.created(location).build();
     }
 
     @GET
-    @Path("/lobbies/{lobbyId}")
+    @Path("/{lobbyId}")
     public Response getLobby(
-            @HeaderParam("Lobby") @NotNull @PathParam("id") String lobbyId) {
+            @NotNull @PathParam("lobbyId") String lobbyId) {
         GetLobbyQuery query = new GetLobbyQuery(lobbyId);
         LobbyOutput lobby = getLobbyUseCase.execute(query);
         return Response.ok(responseMapper.toResponse(lobby)).build();
     }
 
     @GET
-    @Path("/lobbies")
+    @Path("")
     public Response getLobbies() {
         List<LobbiesOutput> lobbies = getLobbiesUseCase.execute();
         return Response.ok(lobbies).build();
+    }
+
+    @POST
+    @Path("/{lobbyId}/players")
+    public Response joinLobby(
+            @HeaderParam("Player") @NotNull String playerId,
+            @PathParam("lobbyId") @NotNull String lobbyId,
+            @Context UriInfo uriInfo) {
+        JoinLobbyCommand command = new JoinLobbyCommand(lobbyId, playerId);
+        LobbyOutput lobby = joinLobbyUseCase.execute(command);
+        URI location = uriInfo.getAbsolutePathBuilder().path(playerId).build();
+        return Response.created(location).entity(responseMapper.toResponse(lobby)).build();
     }
 }
