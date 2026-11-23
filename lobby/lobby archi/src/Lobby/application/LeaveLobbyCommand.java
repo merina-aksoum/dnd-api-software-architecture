@@ -1,4 +1,9 @@
 package Lobby.application;
 
-public class LeaveLobbyCommand {
+public record LeaveLobbyCommand(
+        String lobbyId,
+        String playerId,
+        String connectedPlayerId
+) {
+
 }
