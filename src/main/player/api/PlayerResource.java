@@ -11,8 +11,8 @@ import main.player.api.dto.CreatePlayerRequest;
 import main.player.application.CreatePlayerCommand;
 import main.player.application.GetPlayerQuery;
 import main.player.application.PlayerOutput;
-import main.player.application.usecase.CreatePlayerUseCase;
-import main.player.application.usecase.GetPlayerUseCase;
+import main.player.application.CreatePlayerUseCase;
+import main.player.application.GetPlayerUseCase;
 
 import java.net.URI;
 
@@ -39,7 +39,6 @@ public class PlayerResource {
 
     @POST
     public URI createPlayer(
-
             @NotNull @Valid CreatePlayerRequest request,
             @Context UriInfo uriInfo
     ) {
@@ -48,11 +47,11 @@ public class PlayerResource {
         return uriInfo.getAbsolutePathBuilder().path(player.username()).build();
         }
     @GET
-    @Path("{id}")
+    @Path("/{playerId}")
     public Response getPlayer(
-            @HeaderParam("Id") @NotNull String id
+            @HeaderParam("playerId") @NotNull String playerId
     ) {
-        GetPlayerQuery query = new GetPlayerQuery(id);
+        GetPlayerQuery query = new GetPlayerQuery(playerId);
         PlayerOutput player = getPlayerUseCase.execute(query);
         return Response.ok(responseMapper.toResponse(player)).build();
     }

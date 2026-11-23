@@ -2,10 +2,9 @@ package main.player;
 
 import main.player.api.*;
 import org.glassfish.jersey.server.ResourceConfig;
-import main.player.api.*;
 import main.player.application.PlayerOutputMapper;
-import main.player.application.usecase.CreatePlayerUseCase;
-import main.player.application.usecase.GetPlayerUseCase;
+import main.player.application.CreatePlayerUseCase;
+import main.player.application.GetPlayerUseCase;
 import main.player.domain.PlayerFactory;
 import main.player.domain.PlayerRepository;
 import main.player.infra.InMemoryPlayerRepository;

@@ -1,16 +1,20 @@
 package main.player.domain;
 
+import java.util.ArrayList;
+
 public class PlayerFactory {
     public Player create(
-            String id,
             String username,
-            String password,
-            String email) {
+            String email,
+            String password
+    ) {
         return new Player(
-                new PlayerId(id),
+                PlayerId.generate(),
                 new Username(username),
+                new Email(email),
                 new Password(password),
-                new Email(email));
+                new ArrayList<>()
+        );
 
     }
 

@@ -1,8 +1,5 @@
-package main.player.application.usecase;
+package main.player.application;
 
-import main.player.application.GetPlayerQuery;
-import main.player.application.PlayerOutput;
-import main.player.application.PlayerOutputMapper;
 import main.player.domain.PlayerId;
 import main.player.domain.PlayerRepository;
 import main.player.domain.Player;
