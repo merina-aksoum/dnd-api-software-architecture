@@ -44,8 +44,8 @@ public class Lobby {
         return lobbyId.hashCode();
     }
 
-    public void join(PlayerId playerId) {
-
+    public void join(LobbyPlayer player) {
+        players.add(player);
     }
 }
 

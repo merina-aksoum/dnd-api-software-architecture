@@ -21,6 +21,8 @@ public class InMemoryLobbyRepository implements LobbyRepository {
     }
     @Override
     public void save(Lobby lobby) {
+        LobbyPersistenceModel model = persistenceMapper.toPersistence(lobby);
+        lobbies.put(model.lobbyId(), model);
     }
 
     @Override

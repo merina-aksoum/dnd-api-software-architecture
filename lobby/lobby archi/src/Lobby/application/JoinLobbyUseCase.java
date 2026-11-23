@@ -3,15 +3,19 @@ package Lobby.application;
 import Lobby.domain.Lobby;
 import Lobby.domain.LobbyId;
 import Lobby.domain.LobbyRepository;
+import Lobby.domain.PlayerGateway;
 
 public class JoinLobbyUseCase {
     private final LobbyRepository repository;
+    private final PlayerGateway gateway;
     private final LobbyOutputMapper outputMapper;
 
     public JoinLobbyUseCase(
             LobbyRepository repository,
+            PlayerGateway gateway,
             LobbyOutputMapper outputMapper) {
         this.repository = repository;
+        this.gateway = gateway;
         this.outputMapper = outputMapper;
     }
 
@@ -23,7 +27,8 @@ public class JoinLobbyUseCase {
 
         //exception checking
 
-        lobby.join(playerId);
+        LobbyPlayer player = gateway.getLobbyPlayer(playerId);
+        lobby.join(player);
         repository.save(lobby);
 
         Lobby updated = repository.fetchById(lobbyId);
