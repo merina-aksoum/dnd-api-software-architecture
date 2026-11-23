@@ -1,6 +1,7 @@
 package main.lobby.infra;
 
 import Lobby.domain.*;
+import main.lobby.domain.*;
 
 import java.util.ArrayList;
 import java.util.Collection;

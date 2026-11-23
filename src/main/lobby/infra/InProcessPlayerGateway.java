@@ -5,6 +5,8 @@ import main.lobby.domain.LobbyPlayer;
 import main.lobby.domain.PlayerGateway;
 import main.player.application.GetPlayerQuery;
 import main.player.application.GetPlayerUseCase;
+import main.player.application.GetPlayersQuery;
+import main.player.application.GetPlayersUseCase;
 import main.player.domain.Player;
 import main.player.domain.PlayerId;
 

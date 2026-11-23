@@ -1,8 +1,10 @@
 package main.lobby.infra;
 
 
-import main.lobby.domain.Lobby;
+import main.lobby.domain.*;
 import main.lobby.domain.Lobby.*;
+import main.player.domain.PlayerId;
+import java.util.List;
 
 public class LobbyPersistenceMapper {
     public LobbyPersistenceModel toPersistence(Lobby lobby) {
@@ -11,7 +13,7 @@ public class LobbyPersistenceMapper {
                 lobby.status().toString(),
                 lobby.hostId().value(),
                 lobby.players(),
-                lobby.capacity());
+                lobby.capacity().value());
     }
 
     public Lobby toDomain(LobbyPersistenceModel model, List<LobbyPlayer> players) {
@@ -29,7 +31,7 @@ public class LobbyPersistenceMapper {
                 new LobbyId(model.lobbyId()),
                 new PlayerId(model.hostId()),
                 model.capacity() - model.players().size(),
-                model.capacity()
+                new Capacity(model.capacity())
         );
     }
 }
