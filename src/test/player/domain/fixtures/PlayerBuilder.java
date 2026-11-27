@@ -1,11 +1,14 @@
-package test.player.domain.fixtures;
+package player.domain.fixtures;
 
-import static test.player.domain.fixtures.EmailFixture.aEmail;
-import static test.player.domain.fixtures.PasswordFixture.aPassword;
+import static player.domain.fixtures.EmailFixture.aEmail;
+import static player.domain.fixtures.PasswordFixture.aPassword;
+import player.domain.Username;
+import player.domain.Email;
+import player.domain.Password;
+import player.domain.Player;
 
-import static test.player.domain.fixtures.UsernameFixture.aUsername;
+import static player.domain.fixtures.UsernameFixture.aUsername;
 
-import main.player.domain.*;
 
 public class PlayerBuilder {
     private Username username = aUsername();

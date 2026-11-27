@@ -1,8 +1,8 @@
-package main.player.config;
+package player.config;
 
+import player.PlayerInstaller;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
-import main.player.PlayerInstaller;
 
 public final class ApplicationContext {
 

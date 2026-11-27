@@ -1,9 +1,9 @@
-package main.player.domain;
+package player.domain;
+
+import player.domain.exception.InvalidUsernameException;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import main.player.domain.exception.InvalidUsernameException;
 
 public record Username(String value) {
     public Username {

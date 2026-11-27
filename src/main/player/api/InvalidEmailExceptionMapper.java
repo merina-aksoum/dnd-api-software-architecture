@@ -1,9 +1,9 @@
-package main.player.api;
+package player.api;
 
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
-import main.player.domain.exception.InvalidEmailException;
+import player.domain.exception.InvalidEmailException;
 
 public class InvalidEmailExceptionMapper implements ExceptionMapper<InvalidEmailException> {
     @Override

@@ -1,4 +1,4 @@
-package main.player.infra;
+package player.infra;
 
 public record PlayerPersistenceModel(
         String username,

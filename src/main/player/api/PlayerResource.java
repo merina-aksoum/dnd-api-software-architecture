@@ -1,4 +1,4 @@
-package main.player.api;
+package player.api;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -7,12 +7,12 @@ import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriInfo;
-import main.player.api.dto.CreatePlayerRequest;
-import main.player.application.CreatePlayerCommand;
-import main.player.application.GetPlayerQuery;
-import main.player.application.PlayerOutput;
-import main.player.application.usecase.CreatePlayerUseCase;
-import main.player.application.usecase.GetPlayerUseCase;
+import player.api.dto.CreatePlayerRequest;
+import player.application.CreatePlayerCommand;
+import player.application.GetPlayerQuery;
+import player.application.PlayerOutput;
+import player.application.usecase.CreatePlayerUseCase;
+import player.application.usecase.GetPlayerUseCase;
 
 import java.net.URI;
 

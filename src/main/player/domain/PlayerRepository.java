@@ -1,4 +1,4 @@
-package main.player.domain;
+package player.domain;
 
 public interface PlayerRepository {
     void save(Player player);

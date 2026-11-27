@@ -1,13 +1,13 @@
-package test.player.domain;
+package player.domain;
 
-import main.player.domain.Password;
-import main.player.domain.exception.InvalidPasswordException;
+import player.domain.Password;
+import player.domain.exception.InvalidPasswordException;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static test.player.domain.fixtures.PasswordFixture.OTHER_PASSWORD;
+import static player.domain.fixtures.PasswordFixture.OTHER_PASSWORD;
 
 public class PasswordTest {
     @ParameterizedTest

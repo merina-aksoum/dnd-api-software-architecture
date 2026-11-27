@@ -1,7 +1,7 @@
-package test.player.domain;
+package player.domain;
 
-import main.player.domain.Email;
-import main.player.domain.exception.InvalidEmailException;
+import player.domain.Email;
+import player.domain.exception.InvalidEmailException;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;

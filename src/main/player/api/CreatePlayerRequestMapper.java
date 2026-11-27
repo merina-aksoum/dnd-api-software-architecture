@@ -1,7 +1,7 @@
-package main.player.api;
+package player.api;
 
-import main.player.api.dto.CreatePlayerRequest;
-import main.player.application.CreatePlayerCommand;
+import player.api.dto.CreatePlayerRequest;
+import player.application.CreatePlayerCommand;
 
 public class CreatePlayerRequestMapper {
     public CreatePlayerCommand toCommand(CreatePlayerRequest request) {

@@ -1,6 +1,6 @@
-package test.player.domain.fixtures;
+package player.domain.fixtures;
 
-import main.player.domain.Password;
+import player.domain.Password;
 
 public class PasswordFixture {
     public static final String PASSWORD = "12345";

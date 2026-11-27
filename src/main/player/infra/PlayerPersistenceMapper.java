@@ -1,6 +1,6 @@
-package main.player.infra;
+package player.infra;
 
-import main.player.domain.*;
+import player.domain.*;
 
 public class PlayerPersistenceMapper {
 

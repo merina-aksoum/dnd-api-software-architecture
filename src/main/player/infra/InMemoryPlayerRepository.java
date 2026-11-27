@@ -1,12 +1,12 @@
-package main.player.infra;
+package player.infra;
 
-import main.player.domain.Email;
-import main.player.domain.Player;
-import main.player.domain.PlayerRepository;
-import main.player.domain.Username;
-import main.player.domain.exception.EmailAlreadyUsedException;
-import main.player.domain.exception.PlayerNotFoundException;
-import main.player.domain.exception.UsernameAlreadyUsedException;
+import player.domain.Email;
+import player.domain.Player;
+import player.domain.PlayerRepository;
+import player.domain.Username;
+import player.domain.exception.EmailAlreadyUsedException;
+import player.domain.exception.PlayerNotFoundException;
+import player.domain.exception.UsernameAlreadyUsedException;
 
 import java.util.Map;
 import java.util.Objects;

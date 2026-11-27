@@ -1,6 +1,6 @@
-package main.player.domain.exception;
+package player.domain.exception;
 
-import main.player.domain.Username;
+import player.domain.Username;
 
 public class PlayerNotFoundException extends PlayerException {
     public PlayerNotFoundException(Username username) {

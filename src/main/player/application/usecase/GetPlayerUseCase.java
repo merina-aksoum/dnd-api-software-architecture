@@ -1,12 +1,12 @@
-package main.player.application.usecase;
+package player.application.usecase;
 
-import main.player.application.GetPlayerQuery;
-import main.player.application.PlayerOutput;
-import main.player.application.PlayerOutputMapper;
-import main.player.domain.PlayerRepository;
-import main.player.domain.Player;
-import main.player.domain.Username;
-import main.player.domain.exception.PlayerNotFoundException;
+import player.application.GetPlayerQuery;
+import player.application.PlayerOutput;
+import player.application.PlayerOutputMapper;
+import player.domain.Player;
+import player.domain.PlayerRepository;
+import player.domain.Username;
+import player.domain.exception.PlayerNotFoundException;
 
 public class GetPlayerUseCase {
     private final PlayerRepository playerRepository;

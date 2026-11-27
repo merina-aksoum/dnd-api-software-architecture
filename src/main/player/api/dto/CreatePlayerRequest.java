@@ -1,4 +1,4 @@
-package main.player.api.dto;
+package player.api.dto;
 
 import jakarta.validation.constraints.NotNull;
 

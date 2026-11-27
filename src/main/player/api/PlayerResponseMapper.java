@@ -1,7 +1,7 @@
-package main.player.api;
+package player.api;
 
-import main.player.api.dto.GetPlayerResponse;
-import main.player.application.PlayerOutput;
+import player.api.dto.GetPlayerResponse;
+import player.application.PlayerOutput;
 
 public class PlayerResponseMapper {
     public GetPlayerResponse toResponse(PlayerOutput player) {

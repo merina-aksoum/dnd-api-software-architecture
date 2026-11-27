@@ -1,15 +1,15 @@
-package main.player;
+package player;
 
-import main.player.api.*;
-import main.player.api.UsernameAlreadyTakenExceptionMapper;
+import player.api.*;
+import player.api.UsernameAlreadyTakenExceptionMapper;
+import player.application.PlayerOutputMapper;
+import player.application.usecase.CreatePlayerUseCase;
+import player.application.usecase.GetPlayerUseCase;
+import player.domain.PlayerFactory;
+import player.domain.PlayerRepository;
+import player.infra.InMemoryPlayerRepository;
+import player.infra.PlayerPersistenceMapper;
 import org.glassfish.jersey.server.ResourceConfig;
-import main.player.application.PlayerOutputMapper;
-import main.player.application.usecase.CreatePlayerUseCase;
-import main.player.application.usecase.GetPlayerUseCase;
-import main.player.domain.PlayerFactory;
-import main.player.domain.PlayerRepository;
-import main.player.infra.InMemoryPlayerRepository;
-import main.player.infra.PlayerPersistenceMapper;
 
 public class PlayerInstaller {
     private final PlayerRepository playerRepository;

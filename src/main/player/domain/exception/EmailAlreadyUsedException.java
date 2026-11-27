@@ -1,6 +1,6 @@
-package main.player.domain.exception;
+package player.domain.exception;
 
-import main.player.domain.Email;
+import player.domain.Email;
 
 public class EmailAlreadyUsedException extends PlayerException {
 

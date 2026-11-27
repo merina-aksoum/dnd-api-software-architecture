@@ -1,6 +1,6 @@
-package main.player.infra;
+package player.infra;
 
-import main.player.application.ports.PasswordHasher;
+import player.application.ports.PasswordHasher;
 
 import static com.kosprov.jargon2.api.Jargon2.*;
 

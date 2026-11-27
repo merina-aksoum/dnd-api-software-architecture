@@ -1,9 +1,9 @@
-package main.player.api;
+package player.api;
 
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
-import main.player.domain.exception.EmailAlreadyUsedException;
+import player.domain.exception.EmailAlreadyUsedException;
 
 public class EmailAlreadyUsedExceptionMapper implements ExceptionMapper<EmailAlreadyUsedException> {
     public Response toResponse(EmailAlreadyUsedException exception) {

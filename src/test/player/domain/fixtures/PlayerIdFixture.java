@@ -1,6 +1,6 @@
-package test.player.domain.fixtures;
+package player.domain.fixtures;
 
-import main.player.domain.PlayerId;
+import player.domain.PlayerId;
 
 public class PlayerIdFixture {
     private static final String ID = "player-1";

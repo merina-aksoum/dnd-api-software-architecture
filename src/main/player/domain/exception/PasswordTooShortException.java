@@ -1,4 +1,4 @@
-package main.player.domain.exception;
+package player.domain.exception;
 
 public class PasswordTooShortException extends PlayerException {
     public PasswordTooShortException(int length) {

@@ -1,9 +1,9 @@
-package main.player.api;
+package player.api;
 
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
-import main.player.domain.exception.InvalidPasswordException;
+import player.domain.exception.InvalidPasswordException;
 
 public class InvalidPasswordExceptionMapper implements ExceptionMapper<InvalidPasswordException> {
     @Override

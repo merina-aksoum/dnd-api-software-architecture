@@ -1,7 +1,7 @@
-package test.player.domain;
+package player.domain;
 
-import main.player.domain.Username;
-import main.player.domain.exception.InvalidUsernameException;
+import player.domain.Username;
+import player.domain.exception.InvalidUsernameException;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;

@@ -1,9 +1,9 @@
-package main.player.domain;
+package player.domain;
+
+import player.domain.exception.InvalidPasswordException;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import main.player.domain.exception.InvalidPasswordException;
 
 public record Password(String value) {
     public Password {

@@ -1,6 +1,6 @@
-package main.player.application;
+package player.application;
 
-import main.player.domain.Player;
+import player.domain.Player;
 
 public class PlayerOutputMapper {
     public PlayerOutput toOutput(Player player) {

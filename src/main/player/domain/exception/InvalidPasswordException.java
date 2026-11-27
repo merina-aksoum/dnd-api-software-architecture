@@ -1,4 +1,4 @@
-package main.player.domain.exception;
+package player.domain.exception;
 
 public class InvalidPasswordException extends PlayerException {
     public InvalidPasswordException() {

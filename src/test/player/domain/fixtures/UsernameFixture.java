@@ -1,6 +1,6 @@
-package test.player.domain.fixtures;
+package player.domain.fixtures;
 
-import main.player.domain.Username;
+import player.domain.Username;
 
 public class UsernameFixture {
     public static final String USERNAME = "Bob";

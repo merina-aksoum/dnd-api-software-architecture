@@ -1,4 +1,4 @@
-package main.player.domain;
+package player.domain;
 
 public class PlayerFactory {
     public Player create(

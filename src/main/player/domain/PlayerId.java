@@ -1,7 +1,7 @@
-package main.player.domain;
+package player.domain;
 
-import java.util.UUID;
 import java.util.Objects;
+import java.util.UUID;
 
 public record PlayerId(String value) {
 

@@ -1,5 +1,5 @@
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
-import main.player.config.ApplicationContext;
+import player.config.ApplicationContext;
 
 import java.net.URI;
 

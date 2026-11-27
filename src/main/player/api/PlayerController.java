@@ -1,4 +1,4 @@
-package main.player.api;
+package player.api;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -8,9 +8,9 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import main.player.api.dto.CreatePlayerRequest;
-import main.player.application.CreatePlayerCommand;
-import main.player.application.usecase.CreatePlayerUseCase;
+import player.api.dto.CreatePlayerRequest;
+import player.application.CreatePlayerCommand;
+import player.application.usecase.CreatePlayerUseCase;
 
 @Path("/players")
 @Consumes(MediaType.APPLICATION_JSON)

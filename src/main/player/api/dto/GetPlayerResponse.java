@@ -1,4 +1,4 @@
-package main.player.api.dto;
+package player.api.dto;
 
 public record GetPlayerResponse (
         String username,

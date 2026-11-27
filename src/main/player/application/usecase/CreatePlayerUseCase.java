@@ -1,9 +1,9 @@
-package main.player.application.usecase;
+package player.application.usecase;
 
-import main.player.application.CreatePlayerCommand;
-import main.player.application.PlayerOutput;
-import main.player.application.PlayerOutputMapper;
-import main.player.domain.*;
+import player.application.CreatePlayerCommand;
+import player.application.PlayerOutput;
+import player.application.PlayerOutputMapper;
+import player.domain.*;
 
 public class CreatePlayerUseCase {
     private final PlayerFactory playerFactory;

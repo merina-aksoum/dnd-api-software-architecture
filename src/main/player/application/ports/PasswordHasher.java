@@ -1,4 +1,4 @@
-package main.player.application.ports;
+package player.application.ports;
 
 public interface PasswordHasher{
     public String hash(String input);

@@ -1,6 +1,6 @@
-package main.player.domain;
+package player.domain;
 
-import main.player.domain.exception.InvalidEmailException;
+import player.domain.exception.InvalidEmailException;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

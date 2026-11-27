@@ -1,4 +1,4 @@
-package main.player.application;
+package player.application;
 
 public record CreatePlayerCommand(
                 String username,

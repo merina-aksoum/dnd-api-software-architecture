@@ -1,6 +1,6 @@
-package test.player.domain.fixtures;
+package player.domain.fixtures;
 
-import main.player.domain.Email;
+import player.domain.Email;
 
 public class EmailFixture {
     public static final String EMAIL = "Alice@example.com";
